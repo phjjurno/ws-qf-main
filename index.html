@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>wsQf-PDF — PDF 합치기 · 압축 · 도장 · 영수증 정리</title>
+  <meta name="description" content="wsQf-PDF: PDF 합치기, 압축, 파일명 변경, 페이지 번호, 도장·서명, 영수증 A4 정리를 브라우저에서 무료로. 회원가입 없이 사용하고 파일은 서버로 전송되지 않습니다." />
+  <!-- ▼ 배포 후 실제 도메인으로 교체하세요 (sitemap.xml, robots.txt도 동일) -->
+  <link rel="canonical" href="https://ws-qf.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="wsQf-PDF" />
+  <meta property="og:title" content="wsQf-PDF — PDF 합치기 · 압축 · 도장 · 영수증 정리" />
+  <meta property="og:description" content="PDF 합치기, 압축, 페이지 번호, 도장·서명, 영수증 A4 정리를 브라우저에서 무료로. 파일은 서버로 전송되지 않습니다." />
+  <meta property="og:url" content="https://ws-qf.com/" />
+  <meta property="og:image" content="https://ws-qf.com/assets/logo.svg" />
+  <!-- ▲ 배포 후 실제 도메인으로 교체 -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8501673409971666"
+       crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    /* 다크 모드 깜빡임 방지 — CSS 로드 전에 저장된 테마를 미리 적용 */
+    (function () {
+      var saved = localStorage.getItem('wsqf-theme');
+      if (saved === 'dark' || saved === 'light') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    })();
+  </script>
+</head>
+<body>
+<div class="app">
+
+  <!-- ===================== 헤더 ===================== -->
+  <header class="header">
+    <a class="header__logo" href="./" aria-label="wsQf-PDF 홈">
+      <img class="header__logo-img" src="assets/wsQf-PDF.png" alt="wsQf-PDF 로고" />
+    </a>
+
+    <!-- 검색: 업로드된 파일 이름 필터 (클라이언트 필터) -->
+    <div class="search" role="search">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input id="search-input" type="search" placeholder="파일 이름 검색" aria-label="업로드한 파일 이름 검색" />
+    </div>
+
+    <!-- 다크 모드 전환 -->
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="다크 모드 전환">
+      <svg class="icon icon--sm icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </svg>
+      <svg class="icon icon--sm icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </header>
+
+  <div class="body">
+
+    <!-- ===================== 사이드바 (도구 탭) ===================== -->
+    <nav class="sidebar" role="tablist" aria-label="PDF 도구 선택">
+      <span class="sidebar__label">도구</span>
+
+      <button class="tab" role="tab" aria-selected="true" data-tab="files" id="tab-files" aria-controls="panel-files">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        파일 보관함
+      </button>
+
+      <button class="tab" role="tab" aria-selected="false" data-tab="merge" id="tab-merge" aria-controls="panel-merge">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v6a3 3 0 0 0 3 3h10"/><path d="M8 21v-6a3 3 0 0 1 3-3"/><polyline points="17 8 21 12 17 16"/></svg>
+        PDF 합치기
+      </button>
+
+      <button class="tab" role="tab" aria-selected="false" data-tab="compress" id="tab-compress" aria-controls="panel-compress">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        PDF 압축
+      </button>
+
+      <button class="tab" role="tab" aria-selected="false" data-tab="rename" id="tab-rename" aria-controls="panel-rename">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z"/></svg>
+        파일명 변경
+      </button>
+
+      <button class="tab" role="tab" aria-selected="false" data-tab="numbers" id="tab-numbers" aria-controls="panel-numbers">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+        페이지 번호
+      </button>
+
+      <button class="tab" role="tab" aria-selected="false" data-tab="stamp" id="tab-stamp" aria-controls="panel-stamp">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22h14"/><path d="M19.27 13.73A2.5 2.5 0 0 0 17.5 13h-11a2.5 2.5 0 0 0-2.5 2.5V18h16v-2.5c0-.66-.26-1.3-.73-1.77z"/><path d="M14 13V8.54a5.28 5.28 0 0 1 1-3.04A2.5 2.5 0 1 0 9.5 4a2.5 2.5 0 0 0 .5 1.5 5.28 5.28 0 0 1 1 3.04V13"/></svg>
+        도장 · 서명
+      </button>
+
+      <button class="tab" role="tab" aria-selected="false" data-tab="receipts" id="tab-receipts" aria-controls="panel-receipts">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="13" y2="15"/></svg>
+        영수증 정리
+      </button>
+    </nav>
+
+    <!-- ===================== 작업 영역 ===================== -->
+    <main class="main">
+
+      <!-- 파일 보관함: 업로드 + 목록 (모든 도구가 이 보관함의 파일을 사용) -->
+      <section id="panel-files" role="tabpanel" aria-labelledby="tab-files">
+        <h1 class="panel-title">파일 보관함</h1>
+        <p class="panel-desc">PDF를 업로드해 두면 합치기, 압축, 도장 등 모든 도구에서 사용할 수 있습니다. 파일은 서버로 전송되지 않고 브라우저 안에서만 처리됩니다.</p>
+
+        <div class="dropzone" id="dropzone" tabindex="0" role="button"
+             aria-label="PDF 파일 업로드: 클릭하거나 파일을 끌어다 놓으세요">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+          <p class="dropzone__title">PDF 파일을 여기에 끌어다 놓거나 클릭해서 선택하세요</p>
+          <p class="dropzone__hint">PDF만 지원 · 여러 파일 동시 업로드 가능 · 파일당 최대 50MB</p>
+          <input type="file" id="file-input" accept="application/pdf,.pdf" multiple hidden />
+        </div>
+
+        <div class="file-toolbar">
+          <span class="file-toolbar__count" id="file-count" aria-live="polite">파일 <strong>0</strong>개</span>
+          <div style="display:flex; gap:var(--sp-2); align-items:center;">
+            <label for="sort-select" class="file-toolbar__count">정렬</label>
+            <select class="select" id="sort-select">
+              <option value="added">추가한 순서</option>
+              <option value="name">이름순</option>
+              <option value="size-desc">용량 큰 순</option>
+              <option value="size-asc">용량 작은 순</option>
+              <option value="pages-desc">페이지 많은 순</option>
+            </select>
+            <button class="btn btn--secondary btn--sm" id="clear-all" type="button">전체 비우기</button>
+          </div>
+        </div>
+
+        <ul class="file-list" id="file-list" aria-label="업로드된 PDF 목록"></ul>
+        <p class="empty-hint" id="empty-hint">아직 업로드한 파일이 없습니다.</p>
+      </section>
+
+      <!-- ========== PDF 합치기 ========== -->
+      <section id="panel-merge" role="tabpanel" aria-labelledby="tab-merge" hidden>
+        <h1 class="panel-title">PDF 합치기</h1>
+        <p class="panel-desc">보관함의 PDF 중 합칠 파일을 체크하고 ↑↓ 버튼으로 순서를 정한 뒤 합치세요.</p>
+        <ul class="pick-list" id="merge-list" aria-label="합칠 파일 선택 및 순서"></ul>
+        <p class="empty-hint" id="merge-empty">먼저 파일 보관함에 PDF를 업로드하세요.</p>
+        <div class="form-row">
+          <label class="form-label" for="merge-name">저장 파일명</label>
+          <input class="input" id="merge-name" type="text" value="합친문서" />
+        </div>
+        <div class="action-row">
+          <button class="btn" id="merge-run" type="button">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            선택한 PDF 합쳐서 다운로드
+          </button>
+          <span class="status" id="merge-status" role="status"></span>
+        </div>
+      </section>
+
+      <!-- ========== PDF 압축 ========== -->
+      <section id="panel-compress" role="tabpanel" aria-labelledby="tab-compress" hidden>
+        <h1 class="panel-title">PDF 압축</h1>
+        <p class="panel-desc">페이지를 이미지로 변환해 용량을 줄입니다. 스캔 문서·사진 위주 PDF에 효과가 크며, 압축 후에는 문서 안 글자를 선택·검색할 수 없게 됩니다.</p>
+        <div class="form-row">
+          <label class="form-label" for="compress-file">압축할 파일</label>
+          <select class="select select--wide" id="compress-file"></select>
+        </div>
+        <fieldset class="form-row radio-row">
+          <legend class="form-label">압축 강도</legend>
+          <label class="radio"><input type="radio" name="compress-q" value="high" /> 약하게 (화질 우선)</label>
+          <label class="radio"><input type="radio" name="compress-q" value="mid" checked /> 보통 (권장)</label>
+          <label class="radio"><input type="radio" name="compress-q" value="low" /> 강하게 (용량 우선)</label>
+        </fieldset>
+        <div class="action-row">
+          <button class="btn" id="compress-run" type="button">압축해서 다운로드</button>
+          <span class="status" id="compress-status" role="status"></span>
+        </div>
+        <div class="progress" id="compress-progress" hidden>
+          <div class="progress__bar" id="compress-bar"></div>
+        </div>
+      </section>
+
+      <!-- ========== 파일명 변경 ========== -->
+      <section id="panel-rename" role="tabpanel" aria-labelledby="tab-rename" hidden>
+        <h1 class="panel-title">파일명 변경</h1>
+        <p class="panel-desc">파일 이름을 바꾼 뒤 다운로드하세요. 바뀐 이름은 다른 도구에도 그대로 적용됩니다.</p>
+        <ul class="pick-list" id="rename-list" aria-label="파일명 변경 목록"></ul>
+        <p class="empty-hint" id="rename-empty">먼저 파일 보관함에 PDF를 업로드하세요.</p>
+      </section>
+
+      <!-- ========== 페이지 번호 ========== -->
+      <section id="panel-numbers" role="tabpanel" aria-labelledby="tab-numbers" hidden>
+        <h1 class="panel-title">페이지 번호</h1>
+        <p class="panel-desc">선택한 PDF의 모든 페이지에 번호를 넣어 다운로드합니다.</p>
+        <div class="form-row">
+          <label class="form-label" for="numbers-file">대상 파일</label>
+          <select class="select select--wide" id="numbers-file"></select>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="numbers-pos">위치</label>
+          <select class="select" id="numbers-pos">
+            <option value="bc" selected>하단 가운데</option>
+            <option value="br">하단 오른쪽</option>
+            <option value="bl">하단 왼쪽</option>
+            <option value="tc">상단 가운데</option>
+            <option value="tr">상단 오른쪽</option>
+            <option value="tl">상단 왼쪽</option>
+          </select>
+          <label class="form-label" for="numbers-format">형식</label>
+          <select class="select" id="numbers-format">
+            <option value="n" selected>1, 2, 3</option>
+            <option value="n-of-total">1 / 10</option>
+            <option value="dash">- 1 -</option>
+          </select>
+          <label class="form-label" for="numbers-start">시작 번호</label>
+          <input class="input input--num" id="numbers-start" type="number" value="1" min="1" />
+        </div>
+        <div class="action-row">
+          <button class="btn" id="numbers-run" type="button">번호 넣어서 다운로드</button>
+          <span class="status" id="numbers-status" role="status"></span>
+        </div>
+      </section>
+
+      <!-- ========== 도장 · 서명 ========== -->
+      <section id="panel-stamp" role="tabpanel" aria-labelledby="tab-stamp" hidden>
+        <h1 class="panel-title">도장 · 서명</h1>
+        <p class="panel-desc">도장 이미지를 올리거나 서명을 직접 그린 뒤, 미리보기 페이지를 클릭해 원하는 위치에 찍으세요.</p>
+
+        <div class="form-row">
+          <label class="form-label" for="stamp-file">대상 파일</label>
+          <select class="select select--wide" id="stamp-file"></select>
+        </div>
+
+        <!-- 도장 준비: 이미지 업로드 or 직접 그리기 -->
+        <div class="stamp-source">
+          <div class="stamp-source__col">
+            <span class="form-label">① 도장/서명 준비</span>
+            <div class="action-row">
+              <button class="btn btn--secondary btn--sm" id="stamp-upload-btn" type="button">이미지 업로드</button>
+              <input type="file" id="stamp-image-input" accept="image/png,image/jpeg,image/webp" hidden />
+              <button class="btn btn--secondary btn--sm" id="stamp-draw-btn" type="button">서명 직접 그리기</button>
+            </div>
+            <div class="sig-pad-wrap" id="sig-pad-wrap" hidden>
+              <canvas class="sig-pad" id="sig-pad" width="440" height="180" aria-label="서명을 그리는 영역"></canvas>
+              <div class="action-row">
+                <button class="btn btn--secondary btn--sm" id="sig-clear" type="button">지우기</button>
+                <button class="btn btn--sm" id="sig-use" type="button">이 서명 사용</button>
+              </div>
+            </div>
+            <div class="stamp-current" id="stamp-current" hidden>
+              <img id="stamp-current-img" alt="현재 선택된 도장 이미지" />
+              <label class="form-label" for="stamp-size">크기</label>
+              <input type="range" id="stamp-size" min="40" max="240" value="110" aria-label="도장 크기 조절" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 페이지 미리보기 + 찍기 -->
+        <div class="form-row" id="stamp-page-nav" hidden>
+          <span class="form-label">② 미리보기를 클릭해 도장 찍기</span>
+          <button class="icon-btn" id="stamp-prev" type="button" aria-label="이전 페이지">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <span id="stamp-page-label" class="status">1 / 1</span>
+          <button class="icon-btn" id="stamp-next" type="button" aria-label="다음 페이지">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+        <div class="preview-wrap" id="stamp-preview-wrap" hidden>
+          <canvas id="stamp-preview" aria-label="PDF 페이지 미리보기. 클릭하면 현재 도장이 그 위치에 추가됩니다."></canvas>
+          <div id="stamp-overlays"></div>
+        </div>
+
+        <div class="action-row" id="stamp-actions" hidden>
+          <button class="btn" id="stamp-download" type="button">도장 적용해서 다운로드</button>
+          <button class="btn btn--secondary" id="stamp-clear-all" type="button">찍은 도장 모두 지우기</button>
+          <span class="status" id="stamp-status" role="status"></span>
+        </div>
+      </section>
+
+      <!-- ========== 영수증 정리 ========== -->
+      <section id="panel-receipts" role="tabpanel" aria-labelledby="tab-receipts" hidden>
+        <h1 class="panel-title">영수증 정리</h1>
+        <p class="panel-desc">영수증 사진을 올리고 금액을 입력하면 A4 용지에 자동 정렬하고 합계를 계산해 PDF로 만들어 드립니다.</p>
+
+        <div class="dropzone dropzone--sm" id="receipt-dropzone" tabindex="0" role="button"
+             aria-label="영수증 이미지 업로드: 클릭하거나 파일을 끌어다 놓으세요">
+          <p class="dropzone__title">영수증 사진(JPG·PNG·WEBP)을 끌어다 놓거나 클릭해서 선택</p>
+          <p class="dropzone__hint">여러 장 동시 업로드 가능</p>
+          <input type="file" id="receipt-input" accept="image/jpeg,image/png,image/webp" multiple hidden />
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="receipt-title">문서 제목</label>
+          <input class="input" id="receipt-title" type="text" value="영수증 정리" />
+          <label class="form-label" for="receipt-per-page">장당 영수증 수</label>
+          <select class="select" id="receipt-per-page">
+            <option value="2">2장</option>
+            <option value="4" selected>4장</option>
+            <option value="6">6장</option>
+          </select>
+        </div>
+
+        <ul class="receipt-list" id="receipt-list" aria-label="업로드한 영수증 목록"></ul>
+        <p class="empty-hint" id="receipt-empty">아직 올린 영수증이 없습니다.</p>
+
+        <div class="total-bar" id="receipt-total-bar" hidden>
+          합계 <strong id="receipt-total">0원</strong> <span id="receipt-count-label"></span>
+        </div>
+
+        <div class="action-row">
+          <button class="btn" id="receipt-pdf" type="button">A4로 정렬해서 PDF 다운로드</button>
+          <button class="btn btn--secondary" id="receipt-preview-btn" type="button">미리보기</button>
+          <span class="status" id="receipt-status" role="status"></span>
+        </div>
+        <div id="receipt-sheets" class="sheets" aria-label="A4 미리보기"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ===================== SEO 안내 콘텐츠 ===================== -->
+  <div class="content">
+
+    <!-- 광고 영역 (자리만 확보 — 애드센스 승인 후 코드 삽입) -->
+    <div class="ad-placeholder" aria-hidden="true">광고 영역</div>
+
+    <section class="content__section" id="about" aria-labelledby="about-title">
+      <h2 id="about-title">wsQf-PDF는 어떤 서비스인가요?</h2>
+      <p>wsQf-PDF는 설치나 회원가입 없이 브라우저에서 바로 쓰는 무료 PDF 정리 도구입니다.
+      여러 PDF를 하나로 합치고, 용량을 줄이고, 페이지 번호를 넣고, 도장이나 서명을 찍고,
+      영수증 사진을 A4 용지에 자동 정렬해 합계까지 계산한 PDF로 만들 수 있습니다.</p>
+      <p>모든 처리는 사용자의 브라우저 안에서만 이루어집니다. 업로드한 파일과 사진은
+      서버로 전송되지 않으며, 탭을 닫으면 브라우저 메모리에서 사라집니다. 계약서, 견적서,
+      영수증처럼 민감한 문서를 다룰 때에도 외부 유출 걱정 없이 사용할 수 있습니다.</p>
+    </section>
+
+    <section class="content__section" id="guide" aria-labelledby="guide-title">
+      <h2 id="guide-title">도구별 사용 방법</h2>
+      <h3>PDF 합치기</h3>
+      <p>파일 보관함에 PDF를 여러 개 올린 뒤 합치기 탭에서 원하는 파일을 체크하고
+      ↑↓ 버튼으로 순서를 정하면 하나의 PDF로 병합됩니다. 견적서와 계약서를 한 파일로
+      묶어 보내거나, 장별로 스캔한 문서를 하나로 정리할 때 유용합니다.</p>
+      <h3>PDF 압축</h3>
+      <p>스캔 문서나 사진이 많은 PDF의 용량을 크게 줄입니다. 압축 강도를 3단계에서
+      고를 수 있으며, 압축 후에는 문서 안 글자를 선택·검색할 수 없게 되는 점을
+      화면에서 미리 안내합니다. 이메일 첨부 용량 제한에 걸릴 때 특히 유용합니다.</p>
+      <h3>페이지 번호 넣기</h3>
+      <p>위치 6곳(상·하단 × 좌·중·우), 형식 3종, 시작 번호를 골라 모든 페이지에
+      번호를 자동 삽입합니다. 제안서나 보고서 제출 전에 페이지 번호를 요구받았을 때
+      다른 프로그램 없이 바로 해결됩니다.</p>
+      <h3>도장 · 서명 넣기</h3>
+      <p>도장 이미지를 올리거나 화면에 직접 서명을 그린 뒤, 미리보기 페이지를 클릭해
+      원하는 위치에 찍습니다. 드래그로 위치를 옮기고 크기를 조절할 수 있어 계약서
+      서명, 확인 도장 날인을 종이 출력 없이 처리할 수 있습니다.</p>
+      <h3>영수증 정리</h3>
+      <p>영수증 사진을 올리고 금액을 입력하면 A4 용지에 2·4·6장씩 자동 정렬되고
+      마지막 장에 합계 금액이 표시됩니다. 경비 정산, 지출 증빙 제출용 문서를 몇 분
+      만에 만들 수 있습니다.</p>
+    </section>
+
+    <div class="ad-placeholder" aria-hidden="true">광고 영역</div>
+
+    <section class="content__section" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">자주 묻는 질문</h2>
+      <details>
+        <summary>무료인가요? 회원가입이 필요한가요?</summary>
+        <p>모든 기능이 무료이며 회원가입, 로그인, 결제가 전혀 없습니다.</p>
+      </details>
+      <details>
+        <summary>업로드한 파일이 서버에 저장되나요?</summary>
+        <p>아니요. 파일은 서버로 전송되지 않고 사용자의 브라우저 안에서만 처리됩니다.
+        탭을 닫거나 새로고침하면 작업 중이던 파일은 사라집니다.</p>
+      </details>
+      <details>
+        <summary>모바일에서도 사용할 수 있나요?</summary>
+        <p>네. 스마트폰과 태블릿 브라우저에서도 모든 도구를 사용할 수 있도록
+        화면이 자동으로 조정됩니다.</p>
+      </details>
+      <details>
+        <summary>암호가 걸린 PDF도 처리할 수 있나요?</summary>
+        <p>암호화된 PDF는 열 수 없습니다. 암호를 해제한 뒤 업로드해 주세요.</p>
+      </details>
+      <details>
+        <summary>압축하면 화질이 많이 나빠지나요?</summary>
+        <p>압축 강도를 약하게·보통·강하게 중에서 고를 수 있습니다. 다만 압축 방식의
+        특성상 압축 후에는 문서 안 글자를 선택하거나 검색할 수 없게 됩니다.</p>
+      </details>
+      <details>
+        <summary>영수증 금액은 자동으로 인식되나요?</summary>
+        <p>자동 인식(OCR)은 사용하지 않습니다. 금액을 직접 입력하면 합계가 자동으로
+        계산됩니다. 잘못 인식될 걱정 없이 정확한 금액으로 정리할 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>한글이 깨지지 않나요?</summary>
+        <p>네. 페이지 번호, 영수증 정리 등 모든 결과 PDF에서 한글이 정상적으로
+        표시됩니다.</p>
+      </details>
+    </section>
+
+    <section class="content__section" id="privacy" aria-labelledby="privacy-title">
+      <h2 id="privacy-title">개인정보 보호</h2>
+      <ul>
+        <li>업로드한 PDF·이미지는 서버로 전송되지 않으며 브라우저 안에서만 처리됩니다.</li>
+        <li>회원가입이 없으므로 이름, 이메일 등 개인정보를 수집하지 않습니다.</li>
+        <li>다크 모드 설정만 브라우저(localStorage)에 저장되며 외부로 전송되지 않습니다.</li>
+        <li>브라우저를 닫으면 작업 중이던 파일은 모두 사라집니다.</li>
+        <li>민감한 개인정보가 포함된 문서는 결과 PDF를 공유하기 전에 직접 확인해 주세요.</li>
+        <li>광고 게재 시 광고 사업자(예: Google AdSense)가 쿠키를 사용할 수 있으며,
+        이는 광고 적용 시점에 이 안내에 구체적으로 반영됩니다.</li>
+      </ul>
+    </section>
+
+    <div class="ad-placeholder" aria-hidden="true">광고 영역</div>
+
+    <footer class="footer">
+      <p><strong>wsQf-PDF</strong> — 브라우저에서 끝내는 PDF 정리</p>
+      <p>파일은 서버에 저장되지 않습니다 · 회원가입 없음 · 외부 AI 분석 없음</p>
+      <p>© 2026 wsQf-PDF</p>
+    </footer>
+  </div>
+
+  <!-- 토스트 알림 영역 -->
+  <div class="toast-wrap" id="toast-wrap" aria-live="polite"></div>
+</div>
+
+<!-- 구조화 데이터: WebApplication + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "wsQf-PDF",
+  "url": "https://ws-qf.com/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "inLanguage": "ko",
+  "description": "PDF 합치기, 압축, 파일명 변경, 페이지 번호, 도장·서명, 영수증 A4 정리를 브라우저에서 무료로 처리하는 도구. 파일은 서버로 전송되지 않습니다.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "무료인가요? 회원가입이 필요한가요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "모든 기능이 무료이며 회원가입, 로그인, 결제가 전혀 없습니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "업로드한 파일이 서버에 저장되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "아니요. 파일은 서버로 전송되지 않고 사용자의 브라우저 안에서만 처리됩니다. 탭을 닫거나 새로고침하면 작업 중이던 파일은 사라집니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "모바일에서도 사용할 수 있나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. 스마트폰과 태블릿 브라우저에서도 모든 도구를 사용할 수 있도록 화면이 자동으로 조정됩니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "암호가 걸린 PDF도 처리할 수 있나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "암호화된 PDF는 열 수 없습니다. 암호를 해제한 뒤 업로드해 주세요." }
+    },
+    {
+      "@type": "Question",
+      "name": "압축하면 화질이 많이 나빠지나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "압축 강도를 약하게·보통·강하게 중에서 고를 수 있습니다. 다만 압축 후에는 문서 안 글자를 선택하거나 검색할 수 없게 됩니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "영수증 금액은 자동으로 인식되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "자동 인식(OCR)은 사용하지 않습니다. 금액을 직접 입력하면 합계가 자동으로 계산됩니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "한글이 깨지지 않나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. 페이지 번호, 영수증 정리 등 모든 결과 PDF에서 한글이 정상적으로 표시됩니다." }
+    }
+  ]
+}
+</script>
+
+<!-- PDF 라이브러리 (로컬 vendor — 외부 CDN 의존 없음) -->
+<script src="vendor/pdf-lib.min.js"></script>
+<script src="vendor/pdf.min.js"></script>
+<script src="js/pdf-utils.js"></script>
+<script src="js/file-manager.js"></script>
+<script src="js/merge.js"></script>
+<script src="js/rename.js"></script>
+<script src="js/page-numbers.js"></script>
+<script src="js/compress.js"></script>
+<script src="js/stamp.js"></script>
+<script src="js/receipts.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

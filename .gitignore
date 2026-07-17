@@ -1,0 +1,9 @@
+.DS_Store
+.claude/
+deploy-setup.sh
+
+# 다른 프로젝트 (별도 repo로 관리)
+STUDIO/
+bbusyeo/
+mousekm/
+wsqf/
