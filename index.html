@@ -527,20 +527,15 @@
 
     <section class="content__section" id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title">문의 (Contact)</h2>
-      <p>서비스 이용 중 문제가 발생하거나 개선 의견이 있으시면 아래로 연락해 주세요. 영업일 기준 <strong>3일 이내</strong>에 답변드립니다.</p>
-
-      <div class="legal-box">
-        <strong>이메일:</strong> contact@ws-qf.com<br>
-        <strong>운영 시간:</strong> 평일 10:00 – 18:00 (주말·공휴일 제외)<br>
-        <strong>언어:</strong> 한국어 / English
-      </div>
+      <p>서비스 이용 중 문제가 발생하거나 개선 의견이 있으시면 아래 버튼으로 연락해 주세요. 영업일 기준 <strong>3일 이내</strong>에 답변드립니다.</p>
+      <button class="btn btn--primary" id="open-contact-modal" type="button">문의하기</button>
 
       <h3>자주 묻는 문의 유형</h3>
       <ul class="legal-list">
         <li><strong>기능 오류·버그 신고</strong> — 브라우저 종류, 파일 크기, 재현 방법을 함께 알려주시면 빠르게 처리됩니다.</li>
         <li><strong>기능 제안</strong> — 원하시는 기능을 구체적으로 설명해 주시면 개발 우선순위에 반영합니다.</li>
         <li><strong>광고·제휴 문의</strong> — 이메일로 제안서를 보내주세요.</li>
-        <li><strong>개인정보 관련 문의</strong> — 개인정보처리방침 제7조를 확인하신 후 이메일로 문의해 주세요.</li>
+        <li><strong>개인정보 관련 문의</strong> — 개인정보처리방침 제7조를 확인하신 후 문의해 주세요.</li>
       </ul>
     </section>
 
@@ -552,7 +547,7 @@
       <nav class="footer-nav" aria-label="하단 메뉴">
         <a href="#privacy">개인정보처리방침</a>
         <a href="#terms">이용약관</a>
-        <a href="#contact">문의</a>
+        <a href="#" id="footer-contact-link">문의</a>
         <a href="https://yamy.ws-qf.com" target="_blank" rel="noopener">Yamy</a>
         <a href="https://mist.ws-qf.com" target="_blank" rel="noopener">Mist</a>
         <a href="https://shutress.ws-qf.com" target="_blank" rel="noopener">Shutress</a>
@@ -563,6 +558,31 @@
 
   <!-- 토스트 알림 영역 -->
   <div class="toast-wrap" id="toast-wrap" aria-live="polite"></div>
+
+  <!-- 문의 모달 -->
+  <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title">문의하기</h2>
+        <button class="modal-close" id="modal-close" aria-label="닫기" type="button">×</button>
+      </div>
+      <p class="modal-desc">버튼을 누르면 이메일 앱이 열립니다. 내용을 입력 후 전송해 주세요.</p>
+      <form class="modal-form" id="contact-form" novalidate>
+        <div class="modal-field">
+          <label class="form-label" for="contact-subject">제목 <span aria-hidden="true">*</span></label>
+          <input class="input" id="contact-subject" type="text" placeholder="예: 기능 버그 신고" required />
+        </div>
+        <div class="modal-field">
+          <label class="form-label" for="contact-body">내용 <span aria-hidden="true">*</span></label>
+          <textarea class="input" id="contact-body" rows="6" placeholder="문의 내용을 자세히 적어주세요." required></textarea>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn--secondary" type="button" id="modal-cancel">취소</button>
+          <button class="btn btn--primary" type="submit">이메일 앱으로 보내기</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 
 <!-- 구조화 데이터: WebApplication + FAQPage -->

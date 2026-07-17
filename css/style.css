@@ -760,6 +760,63 @@ button { font-family: inherit; }
   :root:not([data-theme="light"]) .header__logo-accent { color: #E06B66; }
 }
 
+/* ---------- 문의 모달 ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--sp-4);
+  animation: modal-fade-in .15s ease;
+}
+.modal-overlay[hidden] { display: none; }
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.modal-card {
+  background: var(--bg);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  padding: var(--sp-6);
+  box-shadow: 0 20px 60px rgba(0,0,0,.2);
+  animation: modal-slide-in .18s ease;
+}
+@keyframes modal-slide-in {
+  from { transform: translateY(12px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-2);
+}
+.modal-title { font-size: 18px; }
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--sub);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.modal-close:hover { background: var(--surface); color: var(--text); }
+.modal-desc { font-size: 13px; color: var(--sub); margin-bottom: var(--sp-4); }
+.modal-form { display: flex; flex-direction: column; gap: var(--sp-3); }
+.modal-field { display: flex; flex-direction: column; gap: 6px; }
+.modal-field textarea { resize: vertical; min-height: 130px; }
+.modal-actions { display: flex; justify-content: flex-end; gap: var(--sp-2); margin-top: var(--sp-1); }
+
 /* ---------- 반응형 ---------- */
 @media (max-width: 760px) {
   .body { flex-direction: column; min-height: auto; }

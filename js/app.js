@@ -75,4 +75,47 @@
   }
 
   window.App = { toast, selectTab };
+
+  // ---------- 문의 모달 ----------
+  const contactModal = document.getElementById('contact-modal');
+  const contactForm  = document.getElementById('contact-form');
+  const CONTACT_EMAIL = 'vspo2@yonsei.ac.kr';
+
+  function openModal() {
+    contactModal.hidden = false;
+    document.getElementById('contact-subject').focus();
+  }
+  function closeModal() {
+    contactModal.hidden = true;
+    contactForm.reset();
+  }
+
+  document.getElementById('open-contact-modal').addEventListener('click', openModal);
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+  document.getElementById('modal-cancel').addEventListener('click', closeModal);
+  document.getElementById('footer-contact-link').addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal();
+  });
+
+  contactModal.addEventListener('click', (e) => {
+    if (e.target === contactModal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !contactModal.hidden) closeModal();
+  });
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const subject = document.getElementById('contact-subject').value.trim();
+    const body    = document.getElementById('contact-body').value.trim();
+    if (!subject || !body) {
+      toast('제목과 내용을 모두 입력해 주세요.', 'error');
+      return;
+    }
+    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('[wsQf-PDF] ' + subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    closeModal();
+    toast('이메일 앱이 열립니다.');
+  });
 })();
