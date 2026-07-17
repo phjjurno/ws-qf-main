@@ -645,6 +645,114 @@ button { font-family: inherit; }
 }
 .footer strong { color: var(--text); }
 
+/* ---------- 서비스 추천 카드 ---------- */
+.recommend-section {
+  max-width: 760px;
+  margin: var(--sp-6) auto;
+}
+.recommend-section__label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--sub);
+  margin-bottom: var(--sp-3);
+}
+.recommend-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+}
+.recommend-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--sp-4);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.recommend-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.07);
+}
+.recommend-card__emoji { font-size: 26px; line-height: 1; margin-bottom: 2px; }
+.recommend-card__name { font-size: 14px; font-weight: 700; }
+.recommend-card__desc { font-size: 12px; color: var(--sub); flex: 1; line-height: 1.5; }
+.recommend-card__url { font-size: 11px; color: var(--primary); margin-top: 4px; }
+
+/* ---------- 법적 섹션 (개인정보, 약관, 문의) ---------- */
+.content__section .legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  color: var(--sub);
+  margin: var(--sp-3) 0;
+}
+.content__section .legal-table th,
+.content__section .legal-table td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.content__section .legal-table th {
+  background: var(--surface);
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+.content__section .legal-list {
+  padding-left: 20px;
+  color: var(--sub);
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: var(--sp-2) 0;
+}
+.content__section .legal-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: var(--sp-4);
+  margin: var(--sp-3) 0;
+  font-size: 14px;
+  color: var(--sub);
+}
+.content__section .legal-box strong { color: var(--text); }
+.legal-date {
+  font-size: 12px;
+  color: var(--sub);
+  margin-bottom: var(--sp-4);
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  max-width: 480px;
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  justify-content: center;
+  margin-bottom: var(--sp-2);
+}
+.footer-nav a {
+  color: var(--sub);
+  font-size: 13px;
+  text-decoration: none;
+}
+.footer-nav a:hover { color: var(--primary); text-decoration: underline; }
+
 /* 헤더 로고 워드마크 색 */
 .header__logo-accent { color: #C1272D; }
 :root[data-theme="dark"] .header__logo-accent { color: #E06B66; }
