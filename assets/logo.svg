@@ -1,15 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="wsQf-PDF 로고">
-  <!-- 문서 외곽선 (좌상단→시계방향, 접힌 모서리 부분은 비움) -->
-  <path d="M300 78 H180 Q136 78 136 122 V390 Q136 434 180 434 H332 Q376 434 376 390 V172"
-        fill="none" stroke="#1D1D1F" stroke-width="26" stroke-linecap="round"/>
-  <!-- 빨간 접힌 모서리 -->
-  <path d="M304 70 L384 150 H322 Q304 150 304 132 Z" fill="#C1272D"/>
-  <!-- 텍스트 배경 (외곽선 위로 지나가는 흰 띠) -->
-  <rect x="96" y="216" width="330" height="80" fill="#FFFFFF"/>
-  <!-- 워드마크 -->
-  <text x="256" y="278" text-anchor="middle"
-        font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif"
-        font-size="88" font-weight="800" letter-spacing="-2">
-    <tspan fill="#1D1D1F">wsQf</tspan><tspan fill="#C1272D">-PDF</tspan>
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5B8FD6"/>
+      <stop offset="1" stop-color="#6C63D8"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#g)"/>
+  <path d="M6 11.5 L10 20.5 L14 13 L18 20.5 L22 11.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="24.5" cy="8" r="2" fill="#fff"/>
 </svg>

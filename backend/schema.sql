@@ -81,3 +81,10 @@ where inspect_day = (
 group by good_id, good_name;
 
 grant select on public.mulga_latest to anon, authenticated;
+
+-- ---------- 권한 (RLS 정책과 별개로 테이블 SELECT 권한 필요) ----------
+-- apply_migration로 만든 테이블은 자동 grant가 안 되므로 명시적으로 부여
+grant usage on schema public to anon, authenticated;
+grant select on public.jiwon_programs to anon, authenticated;
+grant select on public.mulga_prices   to anon, authenticated;
+grant select on public.mulga_latest    to anon, authenticated;

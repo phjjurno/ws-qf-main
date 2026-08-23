@@ -101,6 +101,34 @@ button { font-family: inherit; }
 .header__logo .icon { color: var(--text); }
 .header__logo-img { height: 32px; width: auto; object-fit: contain; display: block; }
 
+/* 브랜드 로고 (워드마크 + 마크) */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+  white-space: nowrap;
+}
+.brand:hover { text-decoration: none; }
+.brand__mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
+  box-shadow: var(--shadow-sm);
+}
+.brand__mark svg { width: 24px; height: 24px; display: block; }
+.brand__word {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.brand__word b { font-weight: 800; color: var(--primary); }
+
 .search {
   flex: 1;
   max-width: 420px;
@@ -838,34 +866,47 @@ button { font-family: inherit; }
 
 /* ===================== wsQf 허브 밴드 (지원금·물가 융합) ===================== */
 .hubband {
-  margin: 0 0 var(--sp-4);
-  padding: var(--sp-4) var(--sp-4) var(--sp-5);
+  margin: 0 0 var(--sp-5);
+  padding: var(--sp-5);
   border: 1px solid var(--border);
-  border-radius: var(--radius-card, 12px);
+  border-radius: var(--radius-lg);
   background:
-    radial-gradient(120% 140% at 0% 0%, var(--primary-soft), transparent 60%),
-    var(--surface);
+    radial-gradient(130% 160% at 0% 0%, var(--primary-soft), transparent 55%),
+    linear-gradient(180deg, var(--surface), var(--bg));
+  box-shadow: var(--shadow-sm);
 }
 .hubband__lead {
-  margin: 0 0 var(--sp-3);
+  margin: 0 0 var(--sp-4);
   font-size: 14px; color: var(--sub); line-height: 1.5;
 }
-.hubband__lead strong { color: var(--text); }
+.hubband__lead strong { color: var(--text); font-weight: 700; }
 .hubband__cards {
-  display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3);
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4);
 }
 .hubcard {
-  display: flex; align-items: center; gap: var(--sp-3);
-  padding: var(--sp-4); border-radius: var(--radius-card, 12px);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; gap: var(--sp-4);
+  padding: var(--sp-5); border-radius: var(--radius-card);
   background: var(--bg); border: 1px solid var(--border); color: var(--text);
-  transition: transform .14s, box-shadow .14s, border-color .14s;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
 }
-.hubcard:hover { text-decoration: none; transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--primary); }
-.hubcard__emoji { font-size: 30px; flex: none; }
-.hubcard__body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.hubcard__body b { font-size: 16px; }
+.hubcard::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  background: linear-gradient(135deg, var(--primary-soft), transparent 55%);
+  opacity: 0; transition: opacity .16s ease; pointer-events: none;
+}
+.hubcard:hover { text-decoration: none; transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+.hubcard:hover::after { opacity: 1; }
+.hubcard__emoji {
+  font-size: 26px; flex: none; width: 52px; height: 52px;
+  display: grid; place-items: center; border-radius: 13px;
+  background: var(--surface-2); box-shadow: var(--shadow-sm);
+}
+.hubcard__body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.hubcard__body b { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
 .hubcard__body small { font-size: 12.5px; color: var(--sub); line-height: 1.45; }
-.hubcard__go { margin-left: auto; flex: none; color: var(--primary); font-weight: 700; font-size: 18px; }
+.hubcard__go { margin-left: auto; flex: none; color: var(--primary); font-weight: 700; font-size: 18px; transition: transform .16s ease; }
+.hubcard:hover .hubcard__go { transform: translateX(3px); }
 .hubcard--mulga:hover { border-color: var(--success, #4C8F63); }
 .hubcard--mulga .hubcard__go { color: var(--success, #4C8F63); }
 

@@ -1,9 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <style>
-    .doc { stroke: #1D1D1F; }
-    @media (prefers-color-scheme: dark) { .doc { stroke: #E4E4E7; } }
-  </style>
-  <path class="doc" d="M13.5 3H7a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V9.5"
-        fill="none" stroke-width="1.8" stroke-linecap="round"/>
-  <path d="M14 3l6 6h-4.5A1.5 1.5 0 0 1 14 7.5Z" fill="#C1272D"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5B8FD6"/>
+      <stop offset="1" stop-color="#6C63D8"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#g)"/>
+  <path d="M6 11.5 L10 20.5 L14 13 L18 20.5 L22 11.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="24.5" cy="8" r="2" fill="#fff"/>
 </svg>

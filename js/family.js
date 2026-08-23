@@ -10,7 +10,7 @@
     { key: "yamy",     name: "대얌이",   emoji: "🍜", desc: "뭐 먹을지 골라드려요", url: "https://yamy.ws-qf.com" },
     { key: "mist",     name: "비밀창문", emoji: "🌧️", desc: "빗방울 창문에 편지·그림", url: "https://mist.ws-qf.com" },
     { key: "shutress", name: "서트레스", emoji: "🥊", desc: "스트레스 시원하게 해소", url: "https://shutress.ws-qf.com" },
-    { key: "mousekm",  name: "마우스km", emoji: "🖱️", desc: "마우스·키보드 움직임으로 떠나는 여행", url: "https://mousekm.ws-qf.com" }
+    { key: "mousekm",  name: "mousekm"  , emoji: "🖱️", desc: "마우스·키보드 움직임으로 떠나는 여행", url: "https://mousekm.ws-qf.com" }
   ];
 
   function init() {

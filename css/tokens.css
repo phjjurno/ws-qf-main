@@ -24,8 +24,14 @@
   --danger-soft: rgba(193, 88, 80, 0.09);
   --success: #4C8F63;
 
+  /* 브랜드 그라디언트 (로고·강조 요소) */
+  --brand-1: #5B8FD6;
+  --brand-2: #6C63D8;
+  --surface-2: #ECECEF;
+
   --radius-pill: 999px;
-  --radius-card: 12px;
+  --radius-card: 14px;
+  --radius-lg: 20px;
 
   --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter',
                'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', sans-serif;
@@ -37,7 +43,9 @@
   --sp-5: 24px;
   --sp-6: 32px;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.06);
+  --shadow-md: 0 6px 20px -6px rgba(17, 24, 39, 0.14);
+  --shadow-lg: 0 18px 48px -12px rgba(17, 24, 39, 0.22);
 }
 
 /* 시스템이 다크 모드이고 사용자가 라이트를 강제하지 않은 경우 자동 적용 */
@@ -59,8 +67,13 @@
     --danger: #D68880;
     --danger-soft: rgba(214, 136, 128, 0.14);
     --success: #7FBB93;
+    --brand-1: #6F9BD1;
+    --brand-2: #8B84E6;
+    --surface-2: #2F2F33;
 
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 6px 20px -6px rgba(0, 0, 0, 0.55);
+    --shadow-lg: 0 18px 48px -12px rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -82,6 +95,11 @@
   --danger: #D68880;
   --danger-soft: rgba(214, 136, 128, 0.14);
   --success: #7FBB93;
+  --brand-1: #6F9BD1;
+  --brand-2: #8B84E6;
+  --surface-2: #2F2F33;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 20px -6px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 18px 48px -12px rgba(0, 0, 0, 0.7);
 }
