@@ -962,3 +962,49 @@ button { font-family: inherit; }
 .svc-info { margin-top: var(--sp-6); padding-top: var(--sp-5); border-top: 1px solid var(--border); }
 .svc-info h3 { font-size: 16px; margin: 0 0 var(--sp-2); }
 .svc-info p { color: var(--sub); font-size: 14px; margin: 0 0 var(--sp-3); }
+
+/* ===================== 플레이리스트 (하단 BGM 플레이어) ===================== */
+.pl-section { margin: var(--sp-6) 0; }
+.pl-section__head { margin-bottom: var(--sp-4); }
+.pl-section__eyebrow { display:inline-block; font-size:11px; font-weight:800; letter-spacing:.12em; color:var(--primary); }
+.pl-section__head h2 { font-size: 20px; margin: var(--sp-1) 0 var(--sp-2); }
+.pl-section__head p { color: var(--sub); font-size: 14px; margin: 0; max-width: 640px; }
+.pl { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--sp-5); align-items: start; }
+@media (max-width: 860px) { .pl { grid-template-columns: 1fr; } }
+.pl-player { position: relative; border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--border); aspect-ratio: 16/9; background: #000; box-shadow: var(--shadow-sm); }
+.pl-player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.pl-now { margin-top: 12px; font-size: 13px; color: var(--sub); }
+.pl-now b { font-weight: 700; color: var(--text); }
+.pl-badge { display: inline-block; background: var(--primary); color: #fff; font-size: 10.5px; font-weight: 800; letter-spacing: .06em; border-radius: 999px; padding: 2.5px 9px; margin-left: 6px; vertical-align: 1px; }
+.pl-side { display: flex; flex-direction: column; gap: 12px; }
+.pl-label-main { font-weight: 700; font-size: 14.5px; display: flex; align-items: center; gap: 8px; }
+.pl-icon { width: 18px; height: 18px; color: var(--primary); flex: 0 0 auto; }
+.pl-form { display: flex; gap: 8px; }
+.pl-form input { flex: 1; min-width: 0; border: 1px solid var(--border); border-radius: 10px; padding: 11px 16px; font: inherit; font-size: 13.5px; background: var(--bg); color: var(--text); outline: none; transition: border-color .12s, box-shadow .12s; }
+.pl-form input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+.pl-form .btn { background: var(--primary); color: #fff; border: 0; border-radius: 10px; padding: 0 18px; font-weight: 600; font-size: 14px; cursor: pointer; font-family: inherit; }
+.pl-form .btn:hover { background: var(--primary-deep, var(--primary)); }
+.pl-error { font-size: 12.5px; color: var(--danger); font-weight: 600; padding-left: 4px; }
+.pl-label { font-size: 12.5px; font-weight: 700; color: var(--sub); margin-top: 6px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.pl-link { background: none; border: none; color: var(--primary); font-size: 12.5px; font-weight: 700; padding: 0; cursor: pointer; font-family: inherit; }
+.pl-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pl-presets { display: flex; flex-direction: column; gap: 8px; max-height: 250px; overflow-y: auto; padding-right: 4px; }
+.pl-preset { display: flex; align-items: center; gap: 10px; border: 1px solid var(--border); background: var(--bg); border-radius: 999px; padding: 9px 15px; font-weight: 600; font-size: 13px; color: var(--sub); cursor: pointer; transition: .14s; text-align: left; flex: 0 0 auto; font-family: inherit; }
+.pl-preset .pl-icon { width: 16px; height: 16px; color: var(--primary); }
+.pl-preset span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pl-preset:hover { border-color: var(--primary); color: var(--primary); }
+.pl-preset.is-on { background: var(--primary); border-color: var(--primary); color: #fff; }
+.pl-preset.is-on .pl-icon { color: #fff; }
+.pl-tip { font-size: 12px; color: var(--sub); padding-left: 4px; line-height: 1.6; }
+
+/* ===================== 정책·문의 카테고리 (아코디언) ===================== */
+.legal-hub { margin: var(--sp-6) 0; }
+.legal-hub__title { font-size: 20px; margin: 0 0 var(--sp-3); }
+.legal-acc { border: 1px solid var(--border); border-radius: var(--radius-card); background: var(--bg); margin-bottom: var(--sp-3); overflow: hidden; }
+.legal-acc > summary { cursor: pointer; list-style: none; padding: var(--sp-4) var(--sp-5); font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); }
+.legal-acc > summary::-webkit-details-marker { display: none; }
+.legal-acc > summary::after { content: "▾"; color: var(--sub); transition: transform .15s; }
+.legal-acc[open] > summary::after { transform: rotate(180deg); }
+.legal-acc > summary:hover { background: var(--surface); }
+.legal-acc__body { padding: 0 var(--sp-5) var(--sp-5); border-top: 1px solid var(--border); }
+.legal-acc__body > *:first-child { margin-top: var(--sp-4); }

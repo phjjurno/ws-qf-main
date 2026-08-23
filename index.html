@@ -539,9 +539,49 @@
       </details>
     </section>
 
-    <section class="content__section" id="privacy" aria-labelledby="privacy-title">
-      <h2 id="privacy-title">개인정보처리방침</h2>
-      <p class="legal-date">시행일: 2026년 8월 24일</p>
+    <!-- ===================== 플레이리스트 ===================== -->
+    <section class="pl-section" id="playlist" aria-label="플레이리스트">
+      <div class="pl-section__head">
+        <span class="pl-section__eyebrow">PLAYLIST</span>
+        <h2>작업할 때 듣는 플레이리스트</h2>
+        <p>PULSE ORIGIN 추천 BGM을 틀어두고 작업하세요. 유튜브 링크를 붙여넣어 원하는 곡으로 바꿀 수도 있어요.</p>
+      </div>
+      <div class="pl">
+        <div>
+          <div class="pl-player">
+            <iframe id="pl-frame" src="" title="YouTube 플레이어"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <p class="pl-now" id="pl-now"></p>
+        </div>
+        <div class="pl-side">
+          <label class="pl-label-main" for="pl-input">
+            <svg class="pl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+            유튜브 링크 붙여넣기
+          </label>
+          <div class="pl-form">
+            <input id="pl-input" type="url" placeholder="https://www.youtube.com/watch?v=..." aria-label="유튜브 링크" />
+            <button class="btn" id="pl-play" type="button">재생</button>
+          </div>
+          <p class="pl-error" id="pl-error" hidden>링크를 확인해주세요. 유튜브 영상/플레이리스트 주소만 재생할 수 있어요.</p>
+          <p class="pl-label">PULSEORIGN 추천
+            <button class="pl-link" id="pl-shuffle" type="button">🔀 랜덤 재생</button>
+          </p>
+          <div class="pl-presets" id="pl-presets"></div>
+          <p class="pl-tip">영상 주소(watch?v=…), 짧은 주소(youtu.be/…), 플레이리스트(list=…) 모두 지원해요.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 이용안내 · 정책 (아코디언) ===================== -->
+    <div class="legal-hub" id="policy">
+      <h2 class="legal-hub__title">이용안내 · 정책</h2>
+
+      <details class="legal-acc" id="privacy">
+        <summary>개인정보처리방침</summary>
+        <div class="legal-acc__body">
+      <p class="legal-date">시행일: 2026년 7월 17일</p>
       <p>wsQf(이하 "서비스")는 이용자의 개인정보를 중요하게 생각합니다. 본 방침은 「개인정보 보호법」 및 관련 법령에 따라 서비스가 개인정보를 어떻게 처리하는지 안내합니다. 서비스는 PDF 정리 도구, 정부지원금 진단, 생필품 물가 비교 기능을 제공합니다.</p>
 
       <h3>1. 수집하는 개인정보 항목</h3>
@@ -586,17 +626,19 @@
       <h3>7. 개인정보 보호책임자</h3>
       <div class="legal-box">
         <strong>책임자:</strong> wsQf 운영팀<br>
-        <strong>이메일:</strong> contact@ws-qf.com<br>
+        <strong>문의:</strong> 사이트 하단 <a href="#contact">문의하기</a> 폼 이용<br>
         <strong>처리기간:</strong> 문의 접수 후 영업일 기준 3일 이내 답변
       </div>
 
       <h3>8. 개인정보처리방침 변경</h3>
       <p>본 방침은 법령·서비스 변경에 따라 개정될 수 있으며, 변경 시 사이트 공지를 통해 안내합니다.</p>
-    </section>
+        </div>
+      </details>
 
-    <section class="content__section" id="terms" aria-labelledby="terms-title">
-      <h2 id="terms-title">이용약관</h2>
-      <p class="legal-date">시행일: 2026년 8월 24일</p>
+      <details class="legal-acc" id="terms">
+        <summary>이용약관</summary>
+        <div class="legal-acc__body">
+      <p class="legal-date">시행일: 2026년 7월 17일</p>
 
       <h3>제1조 (목적)</h3>
       <p>본 약관은 wsQf(이하 "서비스")가 제공하는 PDF 처리, 정부지원금 진단, 생필품 물가 비교 등 브라우저 기반 무료 도구의 이용에 관한 조건과 절차, 이용자와 서비스 운영자의 권리·의무 및 책임 사항을 규정함을 목적으로 합니다.</p>
@@ -652,9 +694,11 @@
 
       <h3>제8조 (준거법 및 관할)</h3>
       <p>본 약관은 대한민국 법령에 따라 해석되며, 서비스 이용과 관련된 분쟁은 서울중앙지방법원을 제1심 관할법원으로 합니다.</p>
-    </section>
+        </div>
+      </details>
+    </div>
 
-    <section class="content__section" id="contact" aria-labelledby="contact-title">
+    <section class="content__section legal-hub" id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title">문의 (Contact)</h2>
       <p>서비스 이용 중 문제가 발생하거나 개선 의견이 있으시면 아래 버튼으로 연락해 주세요. 영업일 기준 <strong>3일 이내</strong>에 답변드립니다.</p>
       <button class="btn btn--primary" id="open-contact-modal" type="button">문의하기</button>
@@ -685,7 +729,7 @@
         <a href="https://shutress.ws-qf.com" target="_blank" rel="noopener">Shutress</a>
         <a href="https://mousekm.ws-qf.com" target="_blank" rel="noopener">mousekm</a>
       </nav>
-      <p>© 2026 wsQf · <a href="mailto:contact@ws-qf.com" style="color:inherit">contact@ws-qf.com</a></p>
+      <p>© 2026 wsQf · <a href="#" id="footer-contact-link2" style="color:inherit">문의하기</a></p>
     </footer>
   </div>
 
@@ -792,6 +836,7 @@
 <script src="js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/services.js"></script>
+<script src="js/playlist.js"></script>
 <script src="js/family.js"></script>
 </body>
 </html>

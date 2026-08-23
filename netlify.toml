@@ -2,6 +2,16 @@
   publish = "."
   command = ""
 
+[build.environment]
+  NODE_VERSION = "20"
+  # 프론트의 공개 키(Supabase publishable 등)는 실제 비밀이 아니지만,
+  # [functions] 활성화 시 Netlify 비밀 스캐너가 오탐해 빌드를 막을 수 있어 끈다.
+  SECRETS_SCAN_ENABLED = "false"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -9,13 +19,11 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "SAMEORIGIN"
 
-# HTML: 항상 최신 확인
 [[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# CSS/JS: 매번 재검증(변경 시 즉시 반영, 미변경 시 304로 빠름)
 [[headers]]
   for = "/css/*"
   [headers.values]
@@ -26,12 +34,6 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-# 로고·파비콘 등 자산: 자주 안 바뀌지만 재검증 허용(1시간)
 [[headers]]
   for = "/assets/*"
   [headers.values]

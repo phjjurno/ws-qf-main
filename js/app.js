@@ -93,9 +93,9 @@
   document.getElementById('open-contact-modal').addEventListener('click', openModal);
   document.getElementById('modal-close').addEventListener('click', closeModal);
   document.getElementById('modal-cancel').addEventListener('click', closeModal);
-  document.getElementById('footer-contact-link').addEventListener('click', (e) => {
-    e.preventDefault();
-    openModal();
+  ['footer-contact-link', 'footer-contact-link2'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
   });
 
   contactModal.addEventListener('click', (e) => {
@@ -113,7 +113,7 @@
       toast('제목과 내용을 모두 입력해 주세요.', 'error');
       return;
     }
-    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('[wsQf-PDF] ' + subject)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('[wsQf] ' + subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
     closeModal();
     toast('이메일 앱이 열립니다.');
