@@ -1,0 +1,60 @@
+/* ==========================================================
+   디자인 토큰 — wsQf 공용 (ws-qf.com 브랜드 톤 동일)
+   라이트: 차분한 블루 / 다크: 자동 + 수동
+   ========================================================== */
+:root {
+  --primary: #4A79B0;
+  --primary-deep: #375E8C;
+  --text: #2C2C2E;
+  --sub: #737378;
+  --bg: #FFFFFF;
+  --surface: #F3F3F5;
+  --border: rgba(0, 0, 0, 0.09);
+
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-strong: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --blur: saturate(140%) blur(14px);
+
+  --primary-soft: rgba(74, 121, 176, 0.10);
+  --danger: #C15850;
+  --danger-soft: rgba(193, 88, 80, 0.09);
+  --success: #4C8F63;
+
+  --radius-pill: 999px;
+  --radius-card: 12px;
+
+  --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter',
+               'Apple SD Gothic Neo', 'Pretendard', 'Malgun Gothic', sans-serif;
+
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px;
+  --sp-4: 16px; --sp-5: 24px; --sp-6: 32px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #6F9BD1; --primary-deep: #8FB2DE;
+    --text: #E4E4E7; --sub: #98989F; --bg: #1C1C1E; --surface: #262628;
+    --border: rgba(255, 255, 255, 0.10);
+    --glass: rgba(38, 38, 40, 0.70); --glass-strong: rgba(44, 44, 47, 0.88);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --primary-soft: rgba(111, 155, 209, 0.16);
+    --danger: #D68880; --danger-soft: rgba(214, 136, 128, 0.14); --success: #7FBB93;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  }
+}
+:root[data-theme="dark"] {
+  --primary: #6F9BD1; --primary-deep: #8FB2DE;
+  --text: #E4E4E7; --sub: #98989F; --bg: #1C1C1E; --surface: #262628;
+  --border: rgba(255, 255, 255, 0.10);
+  --glass: rgba(38, 38, 40, 0.70); --glass-strong: rgba(44, 44, 47, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --primary-soft: rgba(111, 155, 209, 0.16);
+  --danger: #D68880; --danger-soft: rgba(214, 136, 128, 0.14); --success: #7FBB93;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+}

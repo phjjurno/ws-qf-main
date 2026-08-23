@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>삼겹살·계란 오늘 얼마? 생필품 가격 즉시조회 — wsQf 물가</title>
+  <meta name="description" content="삼겹살, 계란, 라면, 우유 등 생필품 가격을 마트·편의점·전통시장별로 즉시 비교. 한국소비자원 참가격 공공데이터 기반, 회원가입 없이 무료로." />
+  <link rel="canonical" href="https://mulga.ws-qf.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="wsQf 물가" />
+  <meta property="og:title" content="삼겹살·계란 오늘 얼마? 생필품 가격 즉시조회" />
+  <meta property="og:description" content="생필품 가격을 마트·편의점·전통시장별로 즉시 비교. 회원가입 없이 무료." />
+  <meta property="og:url" content="https://mulga.ws-qf.com/" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8501673409971666" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/family.css" />
+  <script>
+    (function () {
+      var s = localStorage.getItem('wsqf-theme');
+      if (s === 'dark' || s === 'light') document.documentElement.setAttribute('data-theme', s);
+    })();
+  </script>
+</head>
+<body>
+<div class="app">
+
+  <header class="header">
+    <a class="header__logo" href="./" aria-label="wsQf 물가 홈">
+      wsQf <span class="header__badge">물가</span>
+    </a>
+    <span class="header__spacer"></span>
+    <div id="wsqf-family" data-current="mulga"></div>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="다크 모드 전환">
+      <svg class="icon icon--sm icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="icon icon--sm icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </header>
+
+  <!-- 히어로 + 조회 -->
+  <section class="hero">
+    <h1>오늘 장보기 전에, 생필품 가격 <span class="fast">빠르게</span> 확인</h1>
+    <p>삼겹살·계란·라면·우유… 어디가 제일 싼지 3초 만에. 회원가입 없음 · 무료</p>
+  </section>
+
+  <div class="diagnose" aria-label="가격 조회">
+    <div class="diagnose__step">
+      <label class="diagnose__label">품목 <span>(선택)</span></label>
+      <div class="chips" id="chips-cat"></div>
+    </div>
+    <div class="diagnose__step">
+      <label class="diagnose__label">판매처 <span>(선택)</span></label>
+      <div class="chips" id="chips-store"></div>
+    </div>
+    <div class="search" role="search">
+      <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="search-input" type="search" placeholder="상품 이름 검색 (예: 삼겹살, 계란, 라면)" aria-label="상품 검색" />
+    </div>
+  </div>
+
+  <div class="result-head">
+    <h2>가격 정보 <span class="count" id="count">0</span>건</h2>
+    <span class="result-head__sub" id="inspect-day"></span>
+  </div>
+  <div class="cards" id="cards"></div>
+  <p class="empty" id="empty" hidden>조건에 맞는 상품이 없어요. 검색어나 품목을 바꿔보세요.</p>
+
+  <div class="ad-placeholder" aria-hidden="true">광고 영역</div>
+
+  <!-- 추천 (자매 사이트) -->
+  <section class="recommend">
+    <p class="recommend__label">이런 것도 있어요</p>
+    <div class="recommend__cards">
+      <a class="rec-card" href="https://jiwon.ws-qf.com" rel="noopener"><span class="rec-card__emoji">💰</span><span class="rec-card__name">지원금</span><span class="rec-card__desc">내가 받을 수 있는 정부지원금 3초 진단</span><span class="rec-card__url">jiwon.ws-qf.com →</span></a>
+      <a class="rec-card" href="https://ws-qf.com" rel="noopener"><span class="rec-card__emoji">📄</span><span class="rec-card__name">wsQf-PDF</span><span class="rec-card__desc">PDF 합치기·압축·도장·영수증 정리</span><span class="rec-card__url">ws-qf.com →</span></a>
+      <a class="rec-card" href="https://yamy.ws-qf.com" rel="noopener"><span class="rec-card__emoji">🍜</span><span class="rec-card__name">Yamy</span><span class="rec-card__desc">뭐 먹을지 모를 때 골라드려요</span><span class="rec-card__url">yamy.ws-qf.com →</span></a>
+    </div>
+  </section>
+
+  <!-- SEO 콘텐츠 -->
+  <div class="content">
+    <section id="about">
+      <h2>wsQf 물가는 어떤 서비스인가요?</h2>
+      <p>한국소비자원 참가격 공공데이터를 기반으로 생필품 가격을 한 곳에서 비교하는 무료 도구입니다. 삼겹살, 계란, 라면, 우유, 세제 같은 주요 생필품이 대형마트·백화점·SSM·전통시장·편의점에서 각각 얼마인지 한눈에 보여줍니다.</p>
+      <p>회원가입도, 로그인도, 결제도 없습니다. 장보기 전에 30초만 투자해서 어디서 사는 게 이득인지 확인하세요.</p>
+    </section>
+
+    <section id="guide">
+      <h2>이렇게 쓰세요</h2>
+      <h3>1. 품목 고르기</h3>
+      <p>축산·수산·채소·과일·가공식품·생활용품 중 관심 품목을 고르면 해당 상품만 보여줍니다.</p>
+      <h3>2. 판매처 비교</h3>
+      <p>같은 상품도 대형마트와 편의점 가격이 크게 다릅니다. 판매처 유형을 골라 우리 동네에서 살 수 있는 채널끼리 비교하세요.</p>
+      <h3>3. 검색으로 바로 찾기</h3>
+      <p>"삼겹살", "계란"처럼 상품명을 검색하면 평균가와 최저가, 조사일을 바로 확인할 수 있습니다.</p>
+    </section>
+
+    <div class="ad-placeholder" aria-hidden="true">광고 영역</div>
+
+    <section id="faq">
+      <h2>자주 묻는 질문</h2>
+      <details><summary>가격은 얼마나 자주 갱신되나요?</summary><p>한국소비자원 참가격은 매주 금요일에 전국 판매점의 생필품 가격을 조사합니다. 저희는 이 공공데이터를 주기적으로 반영합니다.</p></details>
+      <details><summary>우리 동네 마트 가격과 왜 다른가요?</summary><p>참가격 조사는 전국 표본 판매점 기준입니다. 개별 점포의 할인 행사에 따라 실제 가격은 다를 수 있으니 대략적인 시세 비교용으로 활용하세요.</p></details>
+      <details><summary>정말 무료인가요?</summary><p>네, 모든 기능이 무료이며 회원가입·로그인·결제가 없습니다.</p></details>
+    </section>
+
+    <p class="notice">본 서비스는 공공데이터를 활용한 정보 제공 도구이며, 한국소비자원의 공식 서비스가 아닙니다. 실제 판매가격은 점포·시점에 따라 다를 수 있습니다.</p>
+
+    <footer class="footer">
+      <p><strong>wsQf 물가</strong> — 생필품 가격 즉시조회</p>
+      <nav class="footer-nav" aria-label="하단 메뉴">
+        <a href="https://jiwon.ws-qf.com" rel="noopener">지원금</a>
+        <a href="https://ws-qf.com" rel="noopener">wsQf-PDF</a>
+        <a href="mailto:contact@ws-qf.com">문의</a>
+      </nav>
+      <p>© 2026 wsQf · 데이터 출처: 공공데이터포털(한국소비자원 참가격)</p>
+    </footer>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"wsQf 물가","url":"https://mulga.ws-qf.com/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","inLanguage":"ko","description":"생필품 가격을 마트·편의점·전통시장별로 즉시 비교하는 무료 도구.","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"가격은 얼마나 자주 갱신되나요?","acceptedAnswer":{"@type":"Answer","text":"한국소비자원 참가격은 매주 금요일 전국 판매점의 생필품 가격을 조사하며, 이 공공데이터를 주기적으로 반영합니다."}},
+{"@type":"Question","name":"정말 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네, 모든 기능이 무료이며 회원가입·로그인·결제가 없습니다."}}
+]}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/family.js"></script>
+</body>
+</html>

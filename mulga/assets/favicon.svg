@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style>
+    .doc { stroke: #1D1D1F; }
+    @media (prefers-color-scheme: dark) { .doc { stroke: #E4E4E7; } }
+  </style>
+  <path class="doc" d="M13.5 3H7a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V9.5"
+        fill="none" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M14 3l6 6h-4.5A1.5 1.5 0 0 1 14 7.5Z" fill="#C1272D"/>
+</svg>
