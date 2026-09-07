@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://jiwon.ws-qf.com/sitemap.xml
