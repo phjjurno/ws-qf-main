@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>wsQf — 정부지원금 찾기 · 생필품 물가 비교 · PDF 정리 | 무료 생활 도구</title>
-  <meta name="description" content="wsQf 하나로 끝내는 생활 도구. 받을 수 있는 정부지원금 3초 진단, 삼겹살·계란 생필품 물가 비교, PDF 합치기·압축·도장·영수증 정리까지. 회원가입 없이 무료, 파일은 서버로 전송되지 않습니다." />
-  <meta name="keywords" content="정부지원금, 보조금24, 청년월세, 생필품 가격, 물가 비교, 참가격, PDF 합치기, PDF 압축, 무료 PDF, 영수증 정리" />
+  <title>wsQf — 무료 PDF 편집 도구 | 합치기·압축·페이지번호·도장·영수증 정리</title>
+  <meta name="description" content="설치·회원가입 없이 브라우저에서 바로 쓰는 무료 PDF 도구. PDF 합치기, 용량 압축, 페이지 번호 삽입, 도장·서명 날인, 영수증 A4 정리와 합계 계산까지. 파일은 서버로 전송되지 않고 내 브라우저 안에서만 처리됩니다." />
+  <meta name="keywords" content="PDF 합치기, PDF 압축, PDF 용량 줄이기, PDF 페이지 번호, PDF 도장, PDF 서명, 영수증 정리, 무료 PDF 편집, 온라인 PDF 도구" />
   <!-- ▼ 배포 후 실제 도메인으로 교체하세요 (sitemap.xml, robots.txt도 동일) -->
   <link rel="canonical" href="https://ws-qf.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="wsQf" />
-  <meta property="og:title" content="wsQf — 정부지원금 찾기 · 물가 비교 · PDF 정리" />
-  <meta property="og:description" content="받을 수 있는 정부지원금 3초 진단, 생필품 물가 비교, PDF 정리까지 한 곳에서 무료로." />
+  <meta property="og:title" content="wsQf — 무료 PDF 편집 도구" />
+  <meta property="og:description" content="PDF 합치기·압축·페이지번호·도장·영수증 정리를 브라우저에서 무료로. 파일은 서버로 전송되지 않습니다." />
   <meta property="og:url" content="https://ws-qf.com/" />
   <meta property="og:image" content="https://ws-qf.com/assets/logo.svg" />
   <!-- ▲ 배포 후 실제 도메인으로 교체 -->
@@ -70,28 +70,6 @@
     </button>
   </header>
 
-  <!-- ===================== wsQf 허브 밴드 (지원금·물가 융합) ===================== -->
-  <section class="hubband" aria-label="wsQf 생활정보">
-    <p class="hubband__lead"><strong>돈 버는 지원금, 아끼는 물가.</strong> PDF 정리는 아래에서, 생활에 필요한 돈 정보는 여기서 바로.</p>
-    <div class="hubband__cards">
-      <a class="hubcard hubcard--jiwon" href="#panel-jiwon" data-goto="jiwon">
-        <span class="hubcard__emoji" aria-hidden="true">💰</span>
-        <span class="hubcard__body">
-          <b>지원금 찾기</b>
-          <small>나이·지역·상황만 고르면 받을 수 있는 정부지원금 3초 진단</small>
-        </span>
-        <span class="hubcard__go" aria-hidden="true">→</span>
-      </a>
-      <a class="hubcard hubcard--mulga" href="#panel-mulga" data-goto="mulga">
-        <span class="hubcard__emoji" aria-hidden="true">🧺</span>
-        <span class="hubcard__body">
-          <b>물가 비교</b>
-          <small>삼겹살·계란 오늘 얼마? 마트·편의점·전통시장 가격 즉시 비교</small>
-        </span>
-        <span class="hubcard__go" aria-hidden="true">→</span>
-      </a>
-    </div>
-  </section>
 
   <div class="body">
 
@@ -104,17 +82,8 @@
         파일 보관함
       </button>
 
-      <button class="tab" role="tab" aria-selected="false" data-tab="jiwon" id="tab-jiwon" aria-controls="panel-jiwon">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5a2.5 2 0 0 0-2.5-1.5c-1.5 0-2.5.8-2.5 2s1 1.7 2.5 2 2.5.8 2.5 2-1 2-2.5 2a2.5 2 0 0 1-2.5-1.5"/><path d="M12 6.5v11"/></svg>
-        지원금 찾기
-      </button>
 
-      <button class="tab" role="tab" aria-selected="false" data-tab="mulga" id="tab-mulga" aria-controls="panel-mulga">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18l-1.5 9a2 2 0 0 1-2 1.7H6.5a2 2 0 0 1-2-1.7z"/><path d="M3 6 2 3"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
-        물가 비교
-      </button>
 
-      <span class="sidebar__label sidebar__label--sub">PDF 도구</span>
 
       <button class="tab" role="tab" aria-selected="false" data-tab="merge" id="tab-merge" aria-controls="panel-merge">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v6a3 3 0 0 0 3 3h10"/><path d="M8 21v-6a3 3 0 0 1 3-3"/><polyline points="17 8 21 12 17 16"/></svg>
@@ -150,76 +119,7 @@
     <!-- ===================== 작업 영역 ===================== -->
     <main class="main">
 
-      <!-- ===== 지원금 찾기 ===== -->
-      <section id="panel-jiwon" class="svc-panel" role="tabpanel" aria-labelledby="tab-jiwon" hidden>
-        <h1 class="panel-title">정부지원금 3초 진단</h1>
-        <p class="panel-desc">나이·지역·상황만 고르면 받을 수 있는 정부지원금·보조금을 찾아드립니다. 데이터는 행정안전부 보조금24 공공데이터 기반이며, 회원가입 없이 무료입니다.</p>
 
-        <div class="svc-box">
-          <div class="svc-step">
-            <label class="svc-label">지역 <span>(사는 곳)</span></label>
-            <div class="chips" id="jiwon-chips-region"></div>
-          </div>
-          <div class="svc-step">
-            <label class="svc-label">나이대 <span>(선택)</span></label>
-            <div class="chips" id="jiwon-chips-age"></div>
-          </div>
-          <div class="svc-step">
-            <label class="svc-label">관심 분야 <span>(선택)</span></label>
-            <div class="chips" id="jiwon-chips-cat"></div>
-          </div>
-          <div class="svc-searchbar" role="search">
-            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input id="jiwon-search" type="search" placeholder="지원금 이름·키워드 검색 (예: 월세, 출산)" aria-label="지원금 검색" />
-          </div>
-        </div>
-
-        <div class="svc-result-head">
-          <h2>받을 수 있는 지원금 <span class="svc-count" id="jiwon-count">0</span>건</h2>
-        </div>
-        <div class="svc-cards" id="jiwon-cards"></div>
-        <p class="svc-empty" id="jiwon-empty" hidden>조건에 맞는 지원금이 없어요. 분야·나이 선택을 줄여보세요.</p>
-
-        <div class="svc-info">
-          <h3>정부지원금, 왜 놓치기 쉬울까요?</h3>
-          <p>청년월세, 출산지원금, 국민취업지원, 창업자금처럼 받을 수 있는 지원금은 많지만 부처와 지자체에 흩어져 있어 찾기 어렵습니다. 이 진단기는 나이·지역·관심 분야만으로 조건에 맞는 지원금을 걸러 각 신청 페이지(복지로·고용24 등)로 연결해 줍니다.</p>
-          <p>진단 결과는 대략적인 대상 조건으로 걸러 보여줄 뿐 실제 지급을 보장하지 않으며, 최종 자격과 금액은 각 기관의 심사로 결정됩니다. 신청 전 반드시 원문을 확인하세요.</p>
-        </div>
-      </section>
-
-      <!-- ===== 물가 비교 ===== -->
-      <section id="panel-mulga" class="svc-panel" role="tabpanel" aria-labelledby="tab-mulga" hidden>
-        <h1 class="panel-title">생필품 가격 비교</h1>
-        <p class="panel-desc">삼겹살·계란·라면·우유 등 생필품이 대형마트·편의점·전통시장에서 각각 얼마인지 비교합니다. 한국소비자원 참가격 공공데이터 기반이며, 회원가입 없이 무료입니다.</p>
-
-        <div class="svc-box">
-          <div class="svc-step">
-            <label class="svc-label">품목 <span>(선택)</span></label>
-            <div class="chips" id="mulga-chips-cat"></div>
-          </div>
-          <div class="svc-step">
-            <label class="svc-label">판매처 <span>(선택)</span></label>
-            <div class="chips" id="mulga-chips-store"></div>
-          </div>
-          <div class="svc-searchbar" role="search">
-            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input id="mulga-search" type="search" placeholder="상품 이름 검색 (예: 삼겹살, 계란, 라면)" aria-label="상품 검색" />
-          </div>
-        </div>
-
-        <div class="svc-result-head">
-          <h2>가격 정보 <span class="svc-count" id="mulga-count">0</span>건</h2>
-          <span class="svc-subhead" id="mulga-day"></span>
-        </div>
-        <div class="svc-cards" id="mulga-cards"></div>
-        <p class="svc-empty" id="mulga-empty" hidden>조건에 맞는 상품이 없어요. 검색어나 품목을 바꿔보세요.</p>
-
-        <div class="svc-info">
-          <h3>같은 생필품도 어디서 사느냐에 따라 다릅니다</h3>
-          <p>한국소비자원 참가격은 매주 금요일 전국 판매점의 생필품 가격을 조사합니다. 같은 삼겹살·계란이라도 대형마트와 편의점, 전통시장의 가격이 크게 다를 수 있어, 장보기 전 채널별 시세를 확인하면 매달 새는 돈을 줄일 수 있습니다.</p>
-          <p>표시 가격은 전국 표본 판매점 기준이라 개별 점포의 할인 행사에 따라 실제 가격은 다를 수 있으니 대략적인 시세 비교용으로 활용하세요.</p>
-        </div>
-      </section>
 
       <!-- 파일 보관함: 업로드 + 목록 (모든 도구가 이 보관함의 파일을 사용) -->
       <section id="panel-files" role="tabpanel" aria-labelledby="tab-files">
@@ -466,14 +366,13 @@
 
     <section class="content__section" id="about" aria-labelledby="about-title">
       <h2 id="about-title">wsQf는 어떤 서비스인가요?</h2>
-      <p>wsQf는 설치나 회원가입 없이 브라우저에서 바로 쓰는 무료 생활 도구 모음입니다.
-      받을 수 있는 <strong>정부지원금</strong>을 나이·지역·상황으로 3초 만에 찾고, 삼겹살·계란 같은
-      <strong>생필품 물가</strong>를 마트·편의점·전통시장별로 비교하며, <strong>PDF</strong>를 합치고 압축하고
-      도장·서명·페이지 번호를 넣거나 영수증을 A4로 정리할 수 있습니다.</p>
-      <p>PDF 처리는 전부 브라우저 안에서만 이루어집니다. 업로드한 파일과 사진은 서버로 전송되지
-      않으며 탭을 닫으면 사라지므로, 계약서·견적서·영수증 같은 민감한 문서도 외부 유출 걱정 없이
-      다룰 수 있습니다. 지원금·물가 정보는 행정안전부 보조금24, 한국소비자원 참가격 등 공공데이터를
-      기반으로 제공됩니다.</p>
+      <p>wsQf는 설치나 회원가입 없이 브라우저에서 바로 쓰는 무료 PDF 도구입니다.
+      여러 PDF를 하나로 <strong>합치고</strong>, 이메일 첨부 한도에 맞게 <strong>용량을 줄이고</strong>,
+      제출용 문서에 <strong>페이지 번호</strong>를 넣고, 계약서에 <strong>도장·서명</strong>을 찍고,
+      흩어진 <strong>영수증을 A4 한 장으로 정리</strong>하면서 합계까지 계산할 수 있습니다.</p>
+      <p>모든 처리는 전부 브라우저 안에서만 이루어집니다. 업로드한 파일과 사진은 서버로 전송되지
+      않으며 탭을 닫으면 사라집니다. 그래서 계약서·견적서·영수증처럼 남에게 넘기기 곤란한 문서도
+      외부 유출 걱정 없이 다룰 수 있습니다. 별도의 설치 프로그램이나 결제, 워터마크도 없습니다.</p>
     </section>
 
     <section class="content__section" id="guide" aria-labelledby="guide-title">
@@ -500,7 +399,6 @@
       만에 만들 수 있습니다.</p>
     </section>
 
-    <div class="ad-placeholder" aria-hidden="true">광고 영역</div>
 
     <section class="content__section" id="faq" aria-labelledby="faq-title">
       <h2 id="faq-title">자주 묻는 질문</h2>
@@ -539,40 +437,6 @@
       </details>
     </section>
 
-    <!-- ===================== 플레이리스트 ===================== -->
-    <section class="pl-section" id="playlist" aria-label="플레이리스트">
-      <div class="pl-section__head">
-        <span class="pl-section__eyebrow">PLAYLIST</span>
-        <h2>작업할 때 듣는 플레이리스트</h2>
-        <p>PULSE ORIGIN 추천 BGM을 틀어두고 작업하세요. 유튜브 링크를 붙여넣어 원하는 곡으로 바꿀 수도 있어요.</p>
-      </div>
-      <div class="pl">
-        <div>
-          <div class="pl-player">
-            <iframe id="pl-frame" src="" title="YouTube 플레이어"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
-          <p class="pl-now" id="pl-now"></p>
-        </div>
-        <div class="pl-side">
-          <label class="pl-label-main" for="pl-input">
-            <svg class="pl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
-            유튜브 링크 붙여넣기
-          </label>
-          <div class="pl-form">
-            <input id="pl-input" type="url" placeholder="https://www.youtube.com/watch?v=..." aria-label="유튜브 링크" />
-            <button class="btn" id="pl-play" type="button">재생</button>
-          </div>
-          <p class="pl-error" id="pl-error" hidden>링크를 확인해주세요. 유튜브 영상/플레이리스트 주소만 재생할 수 있어요.</p>
-          <p class="pl-label">PULSEORIGN 추천
-            <button class="pl-link" id="pl-shuffle" type="button">🔀 랜덤 재생</button>
-          </p>
-          <div class="pl-presets" id="pl-presets"></div>
-          <p class="pl-tip">영상 주소(watch?v=…), 짧은 주소(youtu.be/…), 플레이리스트(list=…) 모두 지원해요.</p>
-        </div>
-      </div>
-    </section>
 
     <!-- ===================== 이용안내 · 정책 (아코디언) ===================== -->
     <div class="legal-hub" id="policy">
@@ -582,10 +446,10 @@
         <summary>개인정보처리방침</summary>
         <div class="legal-acc__body">
       <p class="legal-date">시행일: 2026년 7월 17일</p>
-      <p>wsQf(이하 "서비스")는 이용자의 개인정보를 중요하게 생각합니다. 본 방침은 「개인정보 보호법」 및 관련 법령에 따라 서비스가 개인정보를 어떻게 처리하는지 안내합니다. 서비스는 PDF 정리 도구, 정부지원금 진단, 생필품 물가 비교 기능을 제공합니다.</p>
+      <p>wsQf(이하 "서비스")는 이용자의 개인정보를 중요하게 생각합니다. 본 방침은 「개인정보 보호법」 및 관련 법령에 따라 서비스가 개인정보를 어떻게 처리하는지 안내합니다. 서비스는 브라우저에서 동작하는 PDF 편집 도구를 제공합니다.</p>
 
       <h3>1. 수집하는 개인정보 항목</h3>
-      <p>wsQf는 <strong>별도의 회원가입 및 로그인 기능이 없으며</strong>, 이용자의 이름·이메일·전화번호 등 개인식별정보를 수집하지 않습니다. 업로드한 PDF 및 이미지 파일은 이용자의 브라우저(기기 내 메모리)에서만 처리되며 외부 서버로 전송·저장되지 않습니다. 정부지원금·물가 조회 시에도 이용자가 선택한 조건(지역·나이대·품목 등)만 조회에 사용되며, 그 선택값을 개인과 연결해 저장하지 않습니다.</p>
+      <p>wsQf는 <strong>별도의 회원가입 및 로그인 기능이 없으며</strong>, 이용자의 이름·이메일·전화번호 등 개인식별정보를 수집하지 않습니다. 업로드한 PDF 및 이미지 파일은 이용자의 브라우저(기기 내 메모리)에서만 처리되며 외부 서버로 전송·저장되지 않습니다.</p>
       <table class="legal-table">
         <thead><tr><th>항목</th><th>수집 방법</th><th>목적</th></tr></thead>
         <tbody>
@@ -597,7 +461,6 @@
       <h3>2. 개인정보 수집 및 이용 목적</h3>
       <ul class="legal-list">
         <li>서비스 기능 제공 (PDF 처리·변환은 브라우저 내에서만 실행)</li>
-        <li>정부지원금·물가 정보 조회 결과 제공 (공공데이터 기반)</li>
         <li>이용자 화면 설정 유지 (테마 저장)</li>
         <li>광고 게재 및 광고 성과 측정 (Google AdSense 쿠키)</li>
       </ul>
@@ -609,8 +472,6 @@
       <p>wsQf는 이용자의 개인정보를 제3자에게 판매·제공하지 않습니다. 다만 서비스 제공을 위해 다음의 외부 서비스를 이용합니다.</p>
       <ul class="legal-list">
         <li><strong>Google AdSense</strong> — 광고 게재 과정에서 Google LLC가 독립적인 쿠키 정책에 따라 광고 관련 정보를 수집할 수 있습니다.</li>
-        <li><strong>공공데이터포털(행정안전부 보조금24, 한국소비자원 참가격)</strong> — 정부지원금·생필품 가격 데이터의 원천으로, 이용자의 조회 조건만 전달되며 개인식별정보는 전송되지 않습니다.</li>
-        <li><strong>Supabase</strong> — 위 공공데이터를 가공·저장해 조회에 제공하는 데이터베이스로, 개인식별정보는 저장하지 않습니다.</li>
       </ul>
 
       <h3>5. 쿠키(Cookie) 및 광고</h3>
@@ -641,21 +502,18 @@
       <p class="legal-date">시행일: 2026년 7월 17일</p>
 
       <h3>제1조 (목적)</h3>
-      <p>본 약관은 wsQf(이하 "서비스")가 제공하는 PDF 처리, 정부지원금 진단, 생필품 물가 비교 등 브라우저 기반 무료 도구의 이용에 관한 조건과 절차, 이용자와 서비스 운영자의 권리·의무 및 책임 사항을 규정함을 목적으로 합니다.</p>
+      <p>본 약관은 wsQf(이하 "서비스")가 제공하는 브라우저 기반 무료 PDF 편집 도구의 이용에 관한 조건과 절차, 이용자와 서비스 운영자의 권리·의무 및 책임 사항을 규정함을 목적으로 합니다.</p>
 
       <h3>제2조 (용어의 정의)</h3>
       <ul class="legal-list">
-        <li><strong>서비스:</strong> wsQf가 제공하는 PDF 도구(합치기·압축·페이지 번호·도장·영수증 정리)와 정부지원금 진단, 생필품 물가 비교 기능 일체</li>
+        <li><strong>서비스:</strong> wsQf가 제공하는 PDF 도구(합치기·압축·파일명 변경·페이지 번호·도장·서명·영수증 정리) 일체</li>
         <li><strong>이용자:</strong> 본 약관에 동의하고 서비스에 접속하여 이용하는 자</li>
         <li><strong>콘텐츠:</strong> 이용자가 서비스를 통해 처리하는 파일, 이미지, 문서 등</li>
-        <li><strong>공공데이터:</strong> 행정안전부 보조금24, 한국소비자원 참가격 등 공공기관이 개방한 원천 데이터</li>
       </ul>
 
       <h3>제3조 (서비스의 내용)</h3>
-      <p>wsQf는 다음 기능을 무료로 제공합니다. PDF 처리는 이용자의 브라우저 내에서만 이루어지며 파일이 외부 서버로 전송되지 않고, 지원금·물가 정보는 공공데이터를 가공해 제공합니다.</p>
+      <p>wsQf는 다음 기능을 무료로 제공합니다. 모든 처리는 이용자의 브라우저 내에서만 이루어지며 파일이 외부 서버로 전송되지 않습니다.</p>
       <ul class="legal-list">
-        <li>정부지원금 진단: 지역·나이대·분야 조건으로 받을 수 있는 지원금 조회 및 신청 페이지 안내</li>
-        <li>생필품 물가 비교: 품목·판매처별 생필품 가격 비교</li>
         <li>PDF 합치기: 여러 PDF 파일을 하나로 병합</li>
         <li>PDF 압축: 파일 크기 축소 (3단계 강도 선택)</li>
         <li>파일명 변경: PDF 다운로드 시 파일명 지정</li>
@@ -663,7 +521,6 @@
         <li>도장·서명 삽입: 이미지 업로드 또는 직접 그리기</li>
         <li>영수증 A4 정리: 사진 자동 배치 및 합계 계산</li>
       </ul>
-      <p>지원금·물가 정보는 공공데이터를 기반으로 한 참고용이며, 실제 지원 자격·지급 여부 및 판매 가격은 각 기관·판매처의 사정에 따라 다를 수 있습니다. 신청·구매 전 반드시 원문을 확인하시기 바랍니다.</p>
 
       <h3>제4조 (이용 조건)</h3>
       <ul class="legal-list">
@@ -712,18 +569,15 @@
       </ul>
     </section>
 
-    <div class="ad-placeholder" aria-hidden="true">광고 영역</div>
 
     <footer class="footer">
-      <p><strong>wsQf</strong> — 지원금·물가·PDF를 한 곳에서, 무료로</p>
+      <p><strong>wsQf</strong> — 브라우저에서 끝내는 무료 PDF 정리</p>
       <p>파일은 서버에 저장되지 않습니다 · 회원가입 없음 · 외부 AI 분석 없음</p>
       <nav class="footer-nav" aria-label="하단 메뉴">
         <a href="#privacy">개인정보처리방침</a>
         <a href="#terms">이용약관</a>
         <a href="#" id="footer-contact-link">문의</a>
         <a href="https://ws-qf.com" rel="noopener">홈</a>
-        <a href="https://jiwon.ws-qf.com" target="_blank" rel="noopener">지원금</a>
-        <a href="https://mulga.ws-qf.com" target="_blank" rel="noopener">물가</a>
         <a href="https://yamy.ws-qf.com" target="_blank" rel="noopener">Yamy</a>
         <a href="https://mist.ws-qf.com" target="_blank" rel="noopener">Mist</a>
         <a href="https://shutress.ws-qf.com" target="_blank" rel="noopener">Shutress</a>
@@ -773,8 +627,8 @@
   "operatingSystem": "Any",
   "browserRequirements": "Requires JavaScript",
   "inLanguage": "ko",
-  "description": "받을 수 있는 정부지원금 3초 진단, 생필품 물가 비교, PDF 합치기·압축·도장·영수증 정리를 한 곳에서 무료로. 파일은 서버로 전송되지 않습니다.",
-  "featureList": ["정부지원금 진단", "생필품 물가 비교", "PDF 합치기", "PDF 압축", "PDF 도장·서명", "영수증 정리"],
+  "description": "PDF 합치기, 압축, 파일명 변경, 페이지 번호, 도장·서명, 영수증 A4 정리를 브라우저에서 무료로 처리하는 도구. 파일은 서버로 전송되지 않습니다.",
+  "featureList": ["PDF 합치기", "PDF 압축", "파일명 변경", "페이지 번호 삽입", "도장·서명 삽입", "영수증 A4 정리"],
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" }
 }
 </script>
@@ -834,9 +688,6 @@
 <script src="js/stamp.js"></script>
 <script src="js/receipts.js"></script>
 <script src="js/app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/services.js"></script>
-<script src="js/playlist.js"></script>
 <script src="js/family.js"></script>
 </body>
 </html>

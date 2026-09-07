@@ -12,6 +12,20 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# 재심사 기간: 실데이터 미연결 상태인 지원금·물가 페이지를 공개에서 제외
+# (코드는 리포에 보존 — 인증키 연결되면 이 블록만 지우면 복구됨)
+[[redirects]]
+  from = "/jiwon/*"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mulga/*"
+  to = "/"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
