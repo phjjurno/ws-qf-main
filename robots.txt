@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 Disallow: /vendor/
+Disallow: /backend/
+Disallow: /docs/
+Disallow: /functions/
+Disallow: /scripts/
+Disallow: /shared/
 
-# 배포 후 실제 도메인으로 교체하세요
 Sitemap: https://ws-qf.com/sitemap.xml

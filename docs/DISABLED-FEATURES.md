@@ -34,4 +34,5 @@ git show 677d8a1 -- index.html   # pl-section 마크업 확인
 ```
 
 `js/playlist.js`, `css/style.css`의 `.pl-*`,
-`netlify/functions/pulse-tracks.js`, `data/pulse-tracks.json` 모두 보존됨.
+`functions/api/pulse-tracks.js`(Cloudflare Pages Function, 30분 엣지 캐시), `data/pulse-tracks.json` 모두 보존됨.
+클라이언트(`js/playlist.js`)는 `/api/pulse-tracks` → `data/pulse-tracks.json` 순으로 불러온다.

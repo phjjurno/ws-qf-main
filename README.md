@@ -40,7 +40,7 @@ sitemap.xml       # 사이트맵
 
 ## 배포
 
-정적 호스팅(Netlify Drop, GitHub Pages, Vercel 등)에 폴더 전체를 올리면 됩니다.
+Cloudflare Pages 가 GitHub `main` 브랜치 푸시를 자동 배포합니다. 자세한 건 `docs/DEPLOY-wsqf.md`.
 
 ### 배포 후 반드시 교체할 것
 

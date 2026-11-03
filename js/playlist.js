@@ -142,9 +142,9 @@
     $('#pl-now').innerHTML = '<b>' + first.label + '</b> — 재생 버튼을 누르면 시작돼요';
     markActiveChip(first.id);
 
-    /* 최신 PULSE ORIGIN 목록: Netlify 함수 → data json → 내장목록 순 폴백 */
+    /* 최신 PULSE ORIGIN 목록: Pages 함수(/api) → data json → 내장목록 순 폴백 */
     (function () {
-      var sources = ['/.netlify/functions/pulse-tracks', 'data/pulse-tracks.json'];
+      var sources = ['/api/pulse-tracks', 'data/pulse-tracks.json'];
       var tryNext = function (i) {
         if (i >= sources.length) return;
         fetch(sources[i], { cache: 'no-cache' }).then(function (res) {
