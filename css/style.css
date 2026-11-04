@@ -601,7 +601,7 @@ button { font-family: inherit; }
   box-shadow: var(--shadow-sm);
 }
 
-/* ---------- SEO 안내 콘텐츠 · 광고 자리 · 푸터 ---------- */
+/* ---------- SEO 안내 콘텐츠 · 푸터 ---------- */
 .content {
   border-top: 1px solid var(--border);
   background: var(--surface);
@@ -645,19 +645,6 @@ button { font-family: inherit; }
 .content__section summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 .content__section details p { margin: var(--sp-2) 0 0; }
 
-/* 광고 자리 — 실제 버튼과 혼동되지 않게 넉넉한 간격 + 명확한 라벨 */
-.ad-placeholder {
-  max-width: 760px;
-  margin: var(--sp-6) auto;
-  padding: var(--sp-6) 0;
-  border: 1.5px dashed var(--border);
-  border-radius: var(--radius-card);
-  text-align: center;
-  color: var(--sub);
-  font-size: 13px;
-  letter-spacing: .06em;
-  background: var(--bg);
-}
 
 .footer {
   max-width: 760px;
