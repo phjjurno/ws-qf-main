@@ -1006,3 +1006,10 @@ button { font-family: inherit; }
 .content__section .guide-more a, .content__section .guide-all a { color: var(--primary); font-weight: 600; text-decoration: none; }
 .content__section .guide-more a:hover, .content__section .guide-all a:hover { text-decoration: underline; }
 .content__section .guide-all { margin-top: var(--sp-5); padding: var(--sp-4); border-radius: var(--radius-card); background: var(--surface); font-size: 14px; }
+
+/* 홈 대표 제목(h1) — 소개 섹션 제목을 h2와 같은 무게로 */
+.content__section .content__h1 {
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: var(--sp-3);
+}
