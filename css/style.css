@@ -1,7 +1,12 @@
 /* ==========================================================
-   wsQf-PDF — 전체 화면 레이아웃 (차분한 톤 + 다크 모드)
+   wsQf — 전체 화면 레이아웃 (차분한 톤 + 다크 모드)
    ========================================================== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* hidden 속성은 항상 우선한다. .stamp-current{display:flex} 같은 클래스 규칙이
+   UA 기본 [hidden]{display:none} 을 덮어써서, 숨겨야 할 서명 칸·빈 도장 이미지·
+   합계 바가 처음부터 보이던 문제를 막는다. (JS 는 전부 el.hidden 으로 토글) */
+[hidden] { display: none !important; }
 
 html { height: 100%; }
 
@@ -995,3 +1000,9 @@ button { font-family: inherit; }
 .legal-acc > summary:hover { background: var(--surface); }
 .legal-acc__body { padding: 0 var(--sp-5) var(--sp-5); border-top: 1px solid var(--border); }
 .legal-acc__body > *:first-child { margin-top: var(--sp-4); }
+
+/* 도구별 사용 방법 → 상세 가이드 링크 */
+.content__section .guide-more { margin-top: calc(var(--sp-2) * -1); margin-bottom: var(--sp-4); font-size: 14px; }
+.content__section .guide-more a, .content__section .guide-all a { color: var(--primary); font-weight: 600; text-decoration: none; }
+.content__section .guide-more a:hover, .content__section .guide-all a:hover { text-decoration: underline; }
+.content__section .guide-all { margin-top: var(--sp-5); padding: var(--sp-4); border-radius: var(--radius-card); background: var(--surface); font-size: 14px; }

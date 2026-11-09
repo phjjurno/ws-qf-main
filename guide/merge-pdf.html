@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF 합치기 — 여러 PDF를 순서대로 하나로 묶는 법 | wsQf 가이드</title>
+  <meta name="description" content="견적서·계약서·장별 스캔본처럼 흩어진 PDF를 원하는 순서대로 하나의 파일로 합치는 방법. 순서 정하기, 저장 파일명, 합친 뒤 용량 관리와 자주 막히는 지점까지 정리했습니다." />
+  <link rel="canonical" href="https://ws-qf.com/guide/merge-pdf" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="wsQf" />
+  <meta property="og:title" content="PDF 합치기 — 여러 PDF를 순서대로 하나로 묶는 법 | wsQf 가이드" />
+  <meta property="og:description" content="견적서·계약서·장별 스캔본처럼 흩어진 PDF를 원하는 순서대로 하나의 파일로 합치는 방법. 순서 정하기, 저장 파일명, 합친 뒤 용량 관리와 자주 막히는 지점까지 정리했습니다." />
+  <meta property="og:url" content="https://ws-qf.com/guide/merge-pdf" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="google-adsense-account" content="ca-pub-8501673409971666" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8501673409971666" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/guide.css" />
+  <script>
+    (function () {
+      var s = null; try { s = localStorage.getItem('wsqf-theme'); } catch (e) {}
+      if (s === 'dark' || s === 'light') document.documentElement.setAttribute('data-theme', s);
+    })();
+  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "PDF 합치기: 여러 파일을 원하는 순서로 하나로 묶는 법", "description": "견적서·계약서·장별 스캔본처럼 흩어진 PDF를 원하는 순서대로 하나의 파일로 합치는 방법. 순서 정하기, 저장 파일명, 합친 뒤 용량 관리와 자주 막히는 지점까지 정리했습니다.", "inLanguage": "ko", "datePublished": "2026-11-04", "dateModified": "2026-11-04", "author": {"@type": "Organization", "name": "wsQf 운영팀", "url": "https://ws-qf.com/"}, "publisher": {"@type": "Organization", "name": "wsQf", "url": "https://ws-qf.com/"}, "mainEntityOfPage": "https://ws-qf.com/guide/merge-pdf"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://ws-qf.com/"}, {"@type": "ListItem", "position": 2, "name": "가이드", "item": "https://ws-qf.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "PDF 합치기: 여러 파일을 원하는 순서로 하나로 묶는 법", "item": "https://ws-qf.com/guide/merge-pdf"}]}</script>
+</head>
+<body>
+  <header class="g-header">
+    <a class="brand" href="/" aria-label="wsQf 홈">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 11.5 L10 20.5 L14 13 L18 20.5 L22 11.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24.5" cy="8" r="2" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="brand__word">ws<b>Qf</b></span>
+    </a>
+    <nav class="g-header__nav" aria-label="가이드 메뉴">
+      <a class="g-header__link g-header__link--hide-sm" href="/guide/">가이드 목록</a>
+      <a class="btn btn--sm" href="/#merge">도구 열기</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="다크 모드 전환">
+        <svg class="icon icon--sm icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon icon--sm icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+  <main class="g-wrap">
+    <nav class="g-crumb" aria-label="현재 위치"><a href="/">홈</a> › <a href="/guide/">가이드</a> › PDF 합치기: 여러 파일을 원하는 순서로 하나로 묶는 법</nav>
+    <article class="g-article">
+      <h1>PDF 합치기: 여러 파일을 원하는 순서로 하나로 묶는 법</h1>
+      <p class="g-lead">메일에 첨부를 여러 개 붙이면 받는 쪽은 순서를 헷갈리고, 제출 시스템은 파일 하나만 받는 경우가 많습니다. 흩어진 PDF를 의도한 순서로 한 파일에 묶는 과정을 처음부터 끝까지 정리했습니다.</p>
+      <p class="g-meta">wsQf 운영팀 · 2026년 11월 4일</p>
+      <h2>이럴 때 필요해요</h2>
+      <ul>
+        <li><strong>견적서와 계약서를 한 번에 보낼 때</strong> — 받는 사람이 파일을 따로 열어 맞춰 보지 않아도 됩니다.</li>
+        <li><strong>장별로 스캔한 문서를 정리할 때</strong> — 복합기나 휴대폰 스캔 앱이 페이지마다 파일을 따로 만든 경우가 흔합니다.</li>
+        <li><strong>제출 시스템이 파일 하나만 받을 때</strong> — 지원서·증빙 서류를 한 파일로 올리라는 곳이 많습니다.</li>
+        <li><strong>회의 자료를 배포할 때</strong> — 안건 순서대로 묶어 두면 인쇄도 한 번에 끝납니다.</li>
+      </ul>
+
+      <h2>합치는 방법</h2>
+      <ol class="g-steps">
+        <li><strong>파일 보관함에 PDF를 올립니다.</strong> 업로드 영역에 끌어다 놓거나 클릭해서 여러 개를 한꺼번에 고를 수 있습니다. PDF만 받으며 파일 하나당 50MB까지입니다. 이름과 크기가 똑같은 파일은 같은 파일로 보고 한 번만 올라갑니다.</li>
+        <li><strong>왼쪽 도구 목록에서 「PDF 합치기」를 엽니다.</strong> 보관함에 올린 파일이 목록으로 보입니다.</li>
+        <li><strong>합칠 파일에 체크합니다.</strong> 두 개 이상 골라야 합니다. 체크하지 않은 파일은 결과에서 빠집니다.</li>
+        <li><strong>↑ ↓ 버튼으로 순서를 정합니다.</strong> 목록 맨 위에 있는 파일부터 차례로 이어 붙습니다.</li>
+        <li><strong>「저장 파일명」을 적습니다.</strong> 비워 두면 '합친문서'라는 이름으로 저장됩니다.</li>
+        <li><strong>「선택한 PDF 합쳐서 다운로드」를 누릅니다.</strong> 처리는 브라우저 안에서 끝나고 결과 파일이 바로 내려받아집니다.</li>
+      </ol>
+
+      <h2>합친 파일은 이렇게 만들어져요</h2>
+      <p>합치기는 각 PDF의 페이지를 <strong>원본 그대로 복사해서</strong> 이어 붙입니다. 그래서 글자를 선택하거나 검색하는 기능이 그대로 살아 있고, 화질도 변하지 않습니다. A4 세로 문서와 가로로 만든 표를 섞어 합쳐도 각 페이지는 원래 크기와 방향을 유지합니다.</p>
+      <p>다만 <strong>파일 단위로</strong> 합쳐진다는 점을 기억하세요. 각 파일의 모든 페이지가 들어가고, 그중 일부 페이지만 골라 빼는 기능은 없습니다. 필요 없는 페이지가 섞여 있다면 원본을 만든 프로그램에서 먼저 정리해 두는 편이 깔끔합니다. 또 원본에 있던 <strong>책갈피(목차 패널)</strong>는 합친 파일에 남지 않을 수 있습니다.</p>
+
+      <div class="g-note">
+        <p class="g-note__title">순서를 덜 만지는 요령</p>
+        <p>합치기 목록은 <strong>보관함에 올린 순서</strong>대로 만들어집니다. 보관함의 이름순·크기순 정렬은 보관함 화면을 보기 편하게 바꿀 뿐 합치는 순서에는 영향을 주지 않으니, 처음부터 넣고 싶은 순서대로 올리면 ↑↓ 조정이 거의 필요 없습니다. 파일명 앞에 <code>01_</code>, <code>02_</code>처럼 번호를 붙여 두면 목록에서 확인하기도 쉽습니다.</p>
+      </div>
+
+      <h2>합친 다음에 할 일</h2>
+      <p>합친 결과는 바로 다운로드되고 보관함에는 따로 추가되지 않습니다. 이어서 <a href="/guide/page-numbers">페이지 번호를 넣거나</a> <a href="/guide/compress-pdf">용량을 줄이려면</a>, 내려받은 파일을 다시 보관함에 올린 뒤 해당 도구를 쓰면 됩니다. 스캔본을 여러 개 합치면 용량이 메일 첨부 한도를 넘기 쉬우니, 보내기 전에 크기를 한 번 확인해 보세요.</p>
+
+      <h2>막혔을 때</h2>
+      <ul>
+        <li><strong>"합칠 파일을 2개 이상 선택해 주세요"</strong> — 체크된 파일이 하나뿐입니다. 합칠 파일을 모두 체크했는지 확인하세요.</li>
+        <li><strong>파일이 보관함에 안 올라가요</strong> — 암호가 걸린 PDF는 열 수 없습니다. 암호를 해제한 사본을 만들어 올려 주세요. 50MB를 넘는 파일도 올라가지 않습니다.</li>
+        <li><strong>합치는 도중 멈춘 것 같아요</strong> — 모든 처리를 기기 안에서 하기 때문에 수백 페이지짜리 파일 여러 개는 시간이 걸리고 메모리를 많이 씁니다. 휴대폰보다 PC가 안정적이고, 다른 탭을 닫으면 도움이 됩니다.</li>
+      </ul>
+      <h2>자주 묻는 질문</h2>
+      <div class="g-faq">
+        <details><summary>합친 PDF에서도 글자를 선택하고 검색할 수 있나요?</summary><p>네. 페이지를 그림으로 바꾸지 않고 원본 그대로 복사해 붙이기 때문에 원래 되던 글자 선택·검색은 그대로 됩니다.</p></details>
+        <details><summary>몇 개까지 합칠 수 있나요?</summary><p>정해진 개수 제한은 없습니다. 다만 브라우저가 기기 메모리를 써서 처리하므로 파일이 아주 많거나 크면 느려질 수 있습니다. 파일 하나당 50MB까지 올릴 수 있습니다.</p></details>
+        <details><summary>특정 페이지만 골라서 합칠 수 있나요?</summary><p>지금은 파일 단위로만 합쳐집니다. 일부 페이지만 쓰려면 원본에서 그 페이지만 따로 PDF로 저장한 뒤 합쳐 주세요.</p></details>
+        <details><summary>파일이 서버로 올라가나요?</summary><p>아니요. 합치는 작업은 전부 브라우저 안에서 이뤄지고 파일은 외부로 전송되지 않습니다. 자세한 내용은 <a href="/guide/safe-pdf">민감한 PDF 안전하게 다루기</a>에 정리해 두었습니다.</p></details>
+      </div>
+
+      <div class="g-cta">
+        <p>PDF 여러 개를 보관함에 올리고 순서만 정하면 끝납니다.</p>
+        <a class="btn" href="/#merge">지금 바로 해보기 →</a>
+      </div>
+    </article>
+
+    <section class="g-related" aria-labelledby="related-title">
+      <h2 id="related-title">다른 가이드</h2>
+      <div class="g-cards">
+        <a class="g-card" href="/guide/compress-pdf"><b>PDF 용량 줄이기</b><span>압축 강도 고르는 법과 잃는 것</span></a>
+        <a class="g-card" href="/guide/page-numbers"><b>페이지 번호 넣기</b><span>위치·형식·시작 번호, 표지 빼는 요령</span></a>
+        <a class="g-card" href="/guide/stamp-signature"><b>도장·서명 넣기</b><span>흰 배경 없는 도장 만들기와 효력 주의점</span></a>
+        <a class="g-card" href="/guide/receipts"><b>영수증 정리</b><span>사진으로 A4 증빙 PDF와 합계 만들기</span></a>
+        <a class="g-card" href="/guide/safe-pdf"><b>민감한 PDF 안전하게</b><span>파일이 서버로 가지 않는지 확인하는 법</span></a>
+      </div>
+    </section>
+  </main>
+  <footer class="g-footer">
+    <nav aria-label="하단 메뉴">
+      <a href="/">PDF 도구</a>
+      <a href="/guide/">가이드</a>
+      <a href="/#privacy">개인정보처리방침</a>
+      <a href="/#terms">이용약관</a>
+      <a href="/#contact">문의</a>
+    </nav>
+    <p>© 2026 wsQf · 파일은 서버로 전송되지 않고 브라우저 안에서만 처리됩니다</p>
+  </footer>
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle'); if (!btn) return;
+    btn.addEventListener('click', function () {
+      var r = document.documentElement;
+      var cur = r.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      r.setAttribute('data-theme', next);
+      try { localStorage.setItem('wsqf-theme', next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>

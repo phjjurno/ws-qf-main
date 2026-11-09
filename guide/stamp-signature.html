@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF에 도장·서명 넣기 — 출력 없이 날인하는 법과 주의점 | wsQf 가이드</title>
+  <meta name="description" content="견적서·확인서·내부 결재 문서에 프린터 없이 도장이나 서명을 넣는 방법. 흰 배경이 문서를 가리지 않는 도장 이미지 만들기, 여러 페이지에 찍기, 이미지 서명의 효력과 주의점까지 설명합니다." />
+  <link rel="canonical" href="https://ws-qf.com/guide/stamp-signature" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="wsQf" />
+  <meta property="og:title" content="PDF에 도장·서명 넣기 — 출력 없이 날인하는 법과 주의점 | wsQf 가이드" />
+  <meta property="og:description" content="견적서·확인서·내부 결재 문서에 프린터 없이 도장이나 서명을 넣는 방법. 흰 배경이 문서를 가리지 않는 도장 이미지 만들기, 여러 페이지에 찍기, 이미지 서명의 효력과 주의점까지 설명합니다." />
+  <meta property="og:url" content="https://ws-qf.com/guide/stamp-signature" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="google-adsense-account" content="ca-pub-8501673409971666" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8501673409971666" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/guide.css" />
+  <script>
+    (function () {
+      var s = null; try { s = localStorage.getItem('wsqf-theme'); } catch (e) {}
+      if (s === 'dark' || s === 'light') document.documentElement.setAttribute('data-theme', s);
+    })();
+  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "PDF에 도장·서명 넣기: 출력 없이 날인하는 법과 주의점", "description": "견적서·확인서·내부 결재 문서에 프린터 없이 도장이나 서명을 넣는 방법. 흰 배경이 문서를 가리지 않는 도장 이미지 만들기, 여러 페이지에 찍기, 이미지 서명의 효력과 주의점까지 설명합니다.", "inLanguage": "ko", "datePublished": "2026-11-04", "dateModified": "2026-11-04", "author": {"@type": "Organization", "name": "wsQf 운영팀", "url": "https://ws-qf.com/"}, "publisher": {"@type": "Organization", "name": "wsQf", "url": "https://ws-qf.com/"}, "mainEntityOfPage": "https://ws-qf.com/guide/stamp-signature"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://ws-qf.com/"}, {"@type": "ListItem", "position": 2, "name": "가이드", "item": "https://ws-qf.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "PDF에 도장·서명 넣기: 출력 없이 날인하는 법과 주의점", "item": "https://ws-qf.com/guide/stamp-signature"}]}</script>
+</head>
+<body>
+  <header class="g-header">
+    <a class="brand" href="/" aria-label="wsQf 홈">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 11.5 L10 20.5 L14 13 L18 20.5 L22 11.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24.5" cy="8" r="2" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="brand__word">ws<b>Qf</b></span>
+    </a>
+    <nav class="g-header__nav" aria-label="가이드 메뉴">
+      <a class="g-header__link g-header__link--hide-sm" href="/guide/">가이드 목록</a>
+      <a class="btn btn--sm" href="/#stamp">도구 열기</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="다크 모드 전환">
+        <svg class="icon icon--sm icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon icon--sm icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+  <main class="g-wrap">
+    <nav class="g-crumb" aria-label="현재 위치"><a href="/">홈</a> › <a href="/guide/">가이드</a> › PDF에 도장·서명 넣기: 출력 없이 날인하는 법과 주의점</nav>
+    <article class="g-article">
+      <h1>PDF에 도장·서명 넣기: 출력 없이 날인하는 법과 주의점</h1>
+      <p class="g-lead">도장 하나 찍으려고 출력하고, 찍고, 다시 스캔하는 과정은 생각보다 번거롭습니다. 완성된 PDF에 바로 도장이나 서명을 얹는 방법과, 결과물이 지저분해지지 않게 하는 요령, 그리고 꼭 알아야 할 효력 문제를 정리했습니다.</p>
+      <p class="g-meta">wsQf 운영팀 · 2026년 11월 4일</p>
+      <h2>두 가지 방법</h2>
+      <ul>
+        <li><strong>이미지 업로드</strong> — 도장이나 서명을 찍은 이미지(PNG·JPG·WEBP)를 올립니다. 회사 직인처럼 정해진 모양이 있을 때 씁니다.</li>
+        <li><strong>서명 직접 그리기</strong> — 화면의 서명 칸에 마우스나 손가락으로 그린 뒤 「이 서명 사용」을 누릅니다. 다시 그리려면 「지우기」를 누르세요.</li>
+      </ul>
+
+      <h2>찍는 방법</h2>
+      <ol class="g-steps">
+        <li><strong>파일 보관함에 PDF를 올리고 「도장 · 서명」 도구에서 「대상 파일」을 고릅니다.</strong> 첫 페이지 미리보기가 나타납니다.</li>
+        <li><strong>도장을 준비합니다.</strong> 「이미지 업로드」로 도장 이미지를 올리거나 「서명 직접 그리기」로 서명을 만듭니다.</li>
+        <li><strong>「크기」 슬라이더로 크기를 맞춥니다.</strong></li>
+        <li><strong>미리보기에서 찍을 자리를 클릭합니다.</strong> 찍힌 도장은 끌어서 옮길 수 있고, 잘못 찍었다면 도장에 표시되는 × 버튼으로 지웁니다.</li>
+        <li><strong>다른 페이지에도 찍으려면 페이지를 넘겨서 같은 방법으로 찍습니다.</strong> 페이지마다 여러 개를 찍을 수 있습니다. 전부 다시 하려면 「찍은 도장 모두 지우기」를 누르세요.</li>
+        <li><strong>「도장 적용해서 다운로드」를 누릅니다.</strong></li>
+      </ol>
+      <p>도장 위치는 페이지 크기에 대한 <strong>비율</strong>로 저장되기 때문에, 미리보기에서 본 자리 그대로 실제 PDF에 들어갑니다. 원래 페이지의 글자는 이미지로 바뀌지 않고 그대로 남아서, 도장을 찍은 뒤에도 글자 선택과 검색이 됩니다.</p>
+
+      <h2>깔끔한 도장 이미지 만드는 법</h2>
+      <p>결과물이 지저분해지는 가장 큰 원인은 <strong>도장 이미지의 흰 배경</strong>입니다. JPG 사진은 배경을 투명하게 담을 수 없어서, 그대로 찍으면 도장 주변에 흰 네모가 생겨 아래 글자나 서명란 선을 가립니다.</p>
+      <ol>
+        <li>흰 종이에 도장을 진하고 또렷하게 찍습니다.</li>
+        <li>밝은 곳에서 그림자가 지지 않게 정면으로 촬영하거나 스캔합니다.</li>
+        <li>배경 제거 기능이 있는 사진 편집 앱으로 흰 배경을 지우고, 도장 부분만 남게 잘라 <strong>PNG</strong>로 저장합니다.</li>
+      </ol>
+      <p>이렇게 만든 투명 PNG는 wsQf에 올려도 투명 배경이 그대로 유지됩니다. 해상도가 너무 낮으면 확대했을 때 흐릿하니, 도장이 화면을 크게 채우도록 찍는 것이 좋습니다.</p>
+
+      <div class="g-note">
+        <p class="g-note__title">서명을 그릴 때 요령</p>
+        <p>PC에서는 마우스보다 트랙패드가 자연스럽고, 휴대폰에서는 손가락으로 칸을 크게 채워 그린 뒤 크기 슬라이더로 줄이면 선이 매끄럽게 나옵니다. 작게 그리면 떨림이 그대로 보입니다.</p>
+      </div>
+
+      <div class="g-note g-note--warn">
+        <p class="g-note__title">이미지 도장·서명의 효력은 따로 확인하세요</p>
+        <p>문서에 도장이나 서명 이미지를 얹는 방식은 사내 결재, 견적 확인, 간단한 확인서 등에서 '본인이 확인했다'는 표시로 널리 쓰입니다. 하지만 인증서를 사용하는 전자서명이나 전자계약 서비스와는 다른 방식이고, 인감 날인 원본이 필요한 경우도 있습니다. 계약서처럼 중요한 문서라면 <strong>상대방이나 제출처가 요구하는 서명 방식</strong>을 먼저 확인하세요. 이 안내는 법률 자문이 아닙니다.</p>
+      </div>
+
+      <h2>보안상 알아둘 점</h2>
+      <p>올린 도장 이미지와 그린 서명은 브라우저 안에서만 쓰이고 서버에 저장되지 않습니다. 다만 도장이 찍힌 PDF를 받은 사람은 그 이미지를 복사할 수 있습니다. 도장이 들어간 파일은 <strong>받을 사람과 용도를 확인한 뒤</strong> 보내고, 공개된 곳에 올리지 않도록 주의하세요.</p>
+      <h2>자주 묻는 질문</h2>
+      <div class="g-faq">
+        <details><summary>도장을 찍으면 원래 문서의 글자가 그림으로 바뀌나요?</summary><p>아니요. 도장만 페이지 위에 얹어지고 원래 내용은 그대로라서 글자 선택·검색이 계속 됩니다.</p></details>
+        <details><summary>여러 페이지의 같은 자리에 한 번에 찍을 수 있나요?</summary><p>페이지마다 직접 찍어야 합니다. 페이지를 넘기며 같은 위치를 클릭하면 됩니다.</p></details>
+        <details><summary>도장 주변에 흰 네모가 생겨요.</summary><p>도장 이미지에 흰 배경이 있어서 그렇습니다. 배경을 지운 투명 PNG로 다시 만들어 올려 주세요. 위의 '깔끔한 도장 이미지 만드는 법'을 참고하세요.</p></details>
+        <details><summary>압축한 PDF에도 도장을 찍을 수 있나요?</summary><p>네. 압축을 먼저 하고 도장을 나중에 찍으면 도장이 또렷하게 남습니다. 반대로 도장을 찍은 뒤 압축하면 도장도 함께 이미지로 압축됩니다.</p></details>
+      </div>
+
+      <div class="g-cta">
+        <p>도장 이미지를 올리거나 서명을 그려서 원하는 위치에 찍어 보세요.</p>
+        <a class="btn" href="/#stamp">지금 바로 해보기 →</a>
+      </div>
+    </article>
+
+    <section class="g-related" aria-labelledby="related-title">
+      <h2 id="related-title">다른 가이드</h2>
+      <div class="g-cards">
+        <a class="g-card" href="/guide/merge-pdf"><b>PDF 합치기</b><span>여러 PDF를 원하는 순서로 하나로 묶기</span></a>
+        <a class="g-card" href="/guide/compress-pdf"><b>PDF 용량 줄이기</b><span>압축 강도 고르는 법과 잃는 것</span></a>
+        <a class="g-card" href="/guide/page-numbers"><b>페이지 번호 넣기</b><span>위치·형식·시작 번호, 표지 빼는 요령</span></a>
+        <a class="g-card" href="/guide/receipts"><b>영수증 정리</b><span>사진으로 A4 증빙 PDF와 합계 만들기</span></a>
+        <a class="g-card" href="/guide/safe-pdf"><b>민감한 PDF 안전하게</b><span>파일이 서버로 가지 않는지 확인하는 법</span></a>
+      </div>
+    </section>
+  </main>
+  <footer class="g-footer">
+    <nav aria-label="하단 메뉴">
+      <a href="/">PDF 도구</a>
+      <a href="/guide/">가이드</a>
+      <a href="/#privacy">개인정보처리방침</a>
+      <a href="/#terms">이용약관</a>
+      <a href="/#contact">문의</a>
+    </nav>
+    <p>© 2026 wsQf · 파일은 서버로 전송되지 않고 브라우저 안에서만 처리됩니다</p>
+  </footer>
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle'); if (!btn) return;
+    btn.addEventListener('click', function () {
+      var r = document.documentElement;
+      var cur = r.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      r.setAttribute('data-theme', next);
+      try { localStorage.setItem('wsqf-theme', next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>

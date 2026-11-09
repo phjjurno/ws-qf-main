@@ -23,6 +23,15 @@
     tab.addEventListener('click', () => selectTab(tab.dataset.tab));
   });
 
+  // 가이드의 "도구 열기" 링크(/#merge 등)로 들어오면 해당 탭을 바로 연다.
+  // #privacy·#contact 같은 일반 앵커는 탭 이름이 아니라 그대로 둔다.
+  function openFromHash() {
+    const name = location.hash.slice(1);
+    if (panels[name]) selectTab(name);
+  }
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+
   // 키보드 좌우 화살표로 탭 이동 (접근성)
   document.querySelector('.sidebar').addEventListener('keydown', (e) => {
     if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;

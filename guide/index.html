@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF 실전 가이드 — 합치기·압축·번호·도장·영수증 | wsQf</title>
+  <meta name="description" content="PDF 합치기, 용량 줄이기, 페이지 번호, 도장·서명, 영수증 정리를 상황별로 정리한 실전 가이드. 모든 작업은 브라우저 안에서 처리되어 파일이 서버로 가지 않습니다." />
+  <link rel="canonical" href="https://ws-qf.com/guide/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="wsQf" />
+  <meta property="og:title" content="PDF 실전 가이드 — 합치기·압축·번호·도장·영수증 | wsQf" />
+  <meta property="og:description" content="PDF 합치기, 용량 줄이기, 페이지 번호, 도장·서명, 영수증 정리를 상황별로 정리한 실전 가이드. 모든 작업은 브라우저 안에서 처리되어 파일이 서버로 가지 않습니다." />
+  <meta property="og:url" content="https://ws-qf.com/guide/" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="google-adsense-account" content="ca-pub-8501673409971666" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8501673409971666" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/guide.css" />
+  <script>
+    (function () {
+      var s = null; try { s = localStorage.getItem('wsqf-theme'); } catch (e) {}
+      if (s === 'dark' || s === 'light') document.documentElement.setAttribute('data-theme', s);
+    })();
+  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "wsQf PDF 실전 가이드", "url": "https://ws-qf.com/guide/", "inLanguage": "ko", "hasPart": [{"@type": "Article", "headline": "PDF 합치기: 여러 파일을 원하는 순서로 하나로 묶는 법", "url": "https://ws-qf.com/guide/merge-pdf"}, {"@type": "Article", "headline": "PDF 용량 줄이기: 압축 강도 고르는 법과 꼭 알아둘 점", "url": "https://ws-qf.com/guide/compress-pdf"}, {"@type": "Article", "headline": "PDF에 페이지 번호 넣기: 위치·형식·시작 번호 정하는 법", "url": "https://ws-qf.com/guide/page-numbers"}, {"@type": "Article", "headline": "PDF에 도장·서명 넣기: 출력 없이 날인하는 법과 주의점", "url": "https://ws-qf.com/guide/stamp-signature"}, {"@type": "Article", "headline": "영수증 정리: 사진으로 A4 증빙 PDF 만들고 합계 내기", "url": "https://ws-qf.com/guide/receipts"}, {"@type": "Article", "headline": "민감한 PDF, 온라인에서 안전하게 다루는 법", "url": "https://ws-qf.com/guide/safe-pdf"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://ws-qf.com/"}, {"@type": "ListItem", "position": 2, "name": "가이드", "item": "https://ws-qf.com/guide/"}]}</script>
+</head>
+<body>
+  <header class="g-header">
+    <a class="brand" href="/" aria-label="wsQf 홈">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 11.5 L10 20.5 L14 13 L18 20.5 L22 11.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24.5" cy="8" r="2" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="brand__word">ws<b>Qf</b></span>
+    </a>
+    <nav class="g-header__nav" aria-label="가이드 메뉴">
+      <a class="g-header__link g-header__link--hide-sm" href="/guide/">가이드 목록</a>
+      <a class="btn btn--sm" href="/">도구 열기</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="다크 모드 전환">
+        <svg class="icon icon--sm icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon icon--sm icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+  <main class="g-wrap">
+    <nav class="g-crumb" aria-label="현재 위치"><a href="/">홈</a> › 가이드</nav>
+    <article class="g-article">
+      <h1>PDF 실전 가이드</h1>
+      <p class="g-lead">서류를 합치고, 줄이고, 번호를 매기고, 도장을 찍고, 영수증을 정리하는 일을 상황별로 정리했습니다. 각 가이드는 wsQf 도구의 실제 동작을 기준으로 쓰였고, 끝에서 바로 해당 도구로 이어집니다.</p>
+      <div class="g-cards">
+        <a class="g-card" href="/guide/merge-pdf"><b>PDF 합치기</b><span>여러 PDF를 원하는 순서로 하나로 묶기</span></a>
+        <a class="g-card" href="/guide/compress-pdf"><b>PDF 용량 줄이기</b><span>압축 강도 고르는 법과 잃는 것</span></a>
+        <a class="g-card" href="/guide/page-numbers"><b>페이지 번호 넣기</b><span>위치·형식·시작 번호, 표지 빼는 요령</span></a>
+        <a class="g-card" href="/guide/stamp-signature"><b>도장·서명 넣기</b><span>흰 배경 없는 도장 만들기와 효력 주의점</span></a>
+        <a class="g-card" href="/guide/receipts"><b>영수증 정리</b><span>사진으로 A4 증빙 PDF와 합계 만들기</span></a>
+        <a class="g-card" href="/guide/safe-pdf"><b>민감한 PDF 안전하게</b><span>파일이 서버로 가지 않는지 확인하는 법</span></a>
+      </div>
+
+      <h2>어떤 순서로 쓰면 좋을까</h2>
+      <p>여러 작업을 한 파일에 이어서 해야 한다면 <strong>합치기 → 압축 → 페이지 번호·도장</strong> 순서가 가장 깔끔합니다. 합치기는 원본 페이지를 그대로 이어 붙이고, 압축은 페이지를 이미지로 다시 그리기 때문에, 번호와 도장을 마지막에 얹어야 또렷하게 남습니다. 각 단계의 결과 파일은 다운로드되므로 다음 도구를 쓰려면 다시 파일 보관함에 올리면 됩니다.</p>
+
+      <h2>모든 처리는 내 기기 안에서</h2>
+      <p>wsQf의 도구는 파일을 서버로 보내지 않고 브라우저 안에서 처리합니다. 계약서나 신분증 사본처럼 민감한 문서를 다룰 때 무엇을 확인하면 좋은지는 <a href="/guide/safe-pdf">민감한 PDF 안전하게 다루기</a>에 정리했습니다.</p>
+    </article>
+  </main>
+  <footer class="g-footer">
+    <nav aria-label="하단 메뉴">
+      <a href="/">PDF 도구</a>
+      <a href="/guide/">가이드</a>
+      <a href="/#privacy">개인정보처리방침</a>
+      <a href="/#terms">이용약관</a>
+      <a href="/#contact">문의</a>
+    </nav>
+    <p>© 2026 wsQf · 파일은 서버로 전송되지 않고 브라우저 안에서만 처리됩니다</p>
+  </footer>
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle'); if (!btn) return;
+    btn.addEventListener('click', function () {
+      var r = document.documentElement;
+      var cur = r.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      r.setAttribute('data-theme', next);
+      try { localStorage.setItem('wsqf-theme', next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
